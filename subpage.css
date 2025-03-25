@@ -1,0 +1,59 @@
+/* swirl background */
+#circle_sub {
+    height: 400px;
+    width: 500px;
+    background-color: #B875FF;
+    border-radius: 50%;
+    position: sticky;
+   float: right;
+    margin-top: -300px;
+    margin-right: -5px;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    text-align: center;
+}
+
+#circle2_sub {
+    height: 200px;
+    width: 300px;
+    background-color: #B875FF;
+    border-radius: 50%;
+    position: sticky;
+    float: right;
+    margin-top: -200px;
+    margin-right: -105px;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    text-align: center;
+}
+
+#swirlText:hover {
+    animation: spin 2s linear;
+}
+
+@keyframes spin{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+div.rotate_sub {
+    transform: rotate(-5deg);
+    margin-top: 80px;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+}
+
+div.rotate_sub:hover {
+    color: #5D5031;
+    transition-duration: 0.5s;
+}
+
+
+
