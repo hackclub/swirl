@@ -1,0 +1,270 @@
+/* Website designed by @blu on the Hack Club Slack */
+
+* {
+    box-sizing: border-box;
+    color: #5D5031;
+    margin: 0;
+    padding: 0;
+    font-family: "Preahvihear", sans-serif;
+    font-weight: 400;
+}
+
+h, h1, h2, h3, h4, h5, h6, p, p2, li, footer {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+.preahvihear-regular {
+    font-family: "Preahvihear", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*
+Navbar code based from: dhyans.xyz -(modified)
+*/
+.navbar {
+    padding: 0;
+    margin: 0;
+    background-color: #B875FF;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    position : sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: "Preahvihear", sans-serif;
+    font-weight: 700;
+}
+
+.navbar__container{
+    background-color: #B875FF;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 5000px;
+    margin: 0 auto;
+    padding: 0 600px;
+}
+
+.navbar__menu{
+    padding: 0;
+    background-color: #B875FF;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+}
+
+.navbar__item {
+    padding: 0;
+    background-color: #B875FF;
+    height: 80px;
+    margin: 0;
+}
+
+.navbar__links{
+    background-color: #B875FF;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 20px;
+    height: 100%;
+
+}
+
+.navbar__btn {
+    background-color: lightskyblue;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.navbar__links:hover {
+    color: yellow;
+    transition-duration: 0.5s;
+}
+
+.navbar__btn:hover {
+    color: black;
+    background-color: white;
+    transition-timing-function: ease-in;
+    transition-duration: 0.5s;
+}
+
+/* Banner Code From Boba Drops And/Or Hack Club Brand Website */
+.banner {
+    top: -20px;
+    left: 10px;
+    z-index: 1001;
+}
+
+
+.banner img {
+    height: 80px;
+}
+
+.banner:hover img {
+    animation: wave-flag 0.5s linear infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .banner:hover img {
+        transition: 0.1875s cubic-bezier(0.375, 0, 0.675, 1) transform;
+        transform-origin: top left;
+    }
+}
+
+@keyframes wave-flag {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+/* swirl background */
+#circle {
+    height: 550px;
+    width: 800px;
+    background-color: #B875FF;
+    border-radius: 50%;
+    position: sticky;
+    margin-top: -300px;
+}
+div.rotate {
+    transform: rotate(-25deg);
+    margin-top: 20px;
+    margin-left: 245px;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+}
+
+div.rotate:hover {
+    color: #5D5031;
+    transition-duration: 0.5s;
+}
+
+h1{
+    font-size: 50px;
+}
+
+h2{
+    font-size: 35px;
+}
+
+h3{
+    font-size: 25px;
+}
+
+button{
+    font-size: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #fad4c5;
+    font-size: 21px;
+
+}
+
+p{
+    font-size: 20px;
+}
+
+p2{
+    font-size: 21px;
+}
+
+/* make lists prettier!! */
+
+
+list.req {
+    margin-left: 200px;
+    list-style-type: decimal;
+    color: #B875FF;
+}
+
+div.list {
+    margin-left: 50px;
+    font-size: 18px;
+}
+
+div.list_indent {
+    margin-left: 60px;
+}
+
+img.swirl-req-img {
+    float: right;
+    width: 250px;
+    height: 500px;
+    transform: none;
+    position: relative;
+    top: -100px;
+    margin-right: 400px;
+    margin-bottom: -100px;
+
+}
+
+hr{
+    border-color: sandybrown;
+    border-radius: 20px;
+    border-style: dotted;
+    border-width: 10px;"
+}
+
+.sprinkle{
+    height: 15px;
+    width: 25px;
+    background-color: #25C7E0;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 100px;
+    position: sticky;
+}
+
+a:hover{
+    color: black;
+    transition-duration: 0.75s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.675);
+}
+
+.sprinkles__img{
+    opacity: 65%;
+}
+.sprinkles__img:hover{
+    opacity: 1;
+}
+
+footer{
+    background-color: #5D5031;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    position: absolute;
+}
+
+::selection {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+}
+
