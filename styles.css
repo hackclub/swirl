@@ -1,17 +1,24 @@
 /* Website designed by @blu on the Hack Club Slack */
+:root{
+    --navbar-bg: #B875FF;
+    --nav-text: #ffffff;
+    --background: #FDE09D;
+    --text-n-footer: #5D5031;
+    --button-text: #C289FF;
+}
 
 * {
     box-sizing: border-box;
     color: #5D5031;
     margin: 0;
     padding: 0;
-    font-family: "Preahvihear", sans-serif;
-    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    font-weight: 520;
 }
 
-h, h1, h2, h3, h4, h5, h6, p, p2, li, footer {
-    padding-left: 50px;
-    padding-right: 50px;
+h, h1, h3, h4, h5, h6, p, p2, li, footer {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
 }
 
 
@@ -27,69 +34,68 @@ Navbar code based from: dhyans.xyz -(modified)
 .navbar {
     padding: 0;
     margin: 0;
-    background-color: #B875FF;
-    height: 80px;
+    background-color: var(--navbar-bg);
+    height: 5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
-    position : sticky;
+    font-size: 1.2em;
+    position: sticky;
     top: 0;
     z-index: 1000;
     font-family: "Preahvihear", sans-serif;
     font-weight: 700;
+    width: 100%;
 }
 
-.navbar__container{
-    background-color: #B875FF;
+.navbar__container {
+    background-color:var(--navbar-bg);
     display: flex;
-    justify-content: space-between;
-    height: 80px;
+    justify-content: flex-end;
+    height: 5em;
     z-index: 1;
     width: 100%;
-    max-width: 5000px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 600px;
+    padding: 0 5%;
 }
 
-.navbar__menu{
+.navbar__menu {
     padding: 0;
-    background-color: #B875FF;
+    background-color:var(--navbar-bg);
     display: flex;
     align-items: center;
     list-style: none;
     text-align: center;
-    margin: 0;
 }
 
 .navbar__item {
     padding: 0;
-    background-color: #B875FF;
-    height: 80px;
+    background-color:var(--navbar-bg);
+    height: 5em;
     margin: 0;
 }
 
-.navbar__links{
-    background-color: #B875FF;
+.navbar__links {
+    background-color:var(--navbar-bg);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 0 20px;
+    padding: 0 1.5rem;
     height: 100%;
-
 }
 
 .navbar__btn {
     background-color: lightskyblue;
-    border-radius: 15px;
+    border-radius: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-decoration: none;
-    padding: 0 20px;
+    padding: 0 1.5rem;
     width: 100%;
 }
 
@@ -112,9 +118,8 @@ Navbar code based from: dhyans.xyz -(modified)
     z-index: 1001;
 }
 
-
 .banner img {
-    height: 80px;
+    height: 5em;
 }
 
 .banner:hover img {
@@ -139,13 +144,14 @@ Navbar code based from: dhyans.xyz -(modified)
 
 /* swirl background */
 #circle {
-    height: 550px;
-    width: 800px;
-    background-color: #B875FF;
+    height: 38rem;
+    width: 55rem;
+    background-color:var(--navbar-bg);
     border-radius: 50%;
     position: sticky;
-    margin-top: -300px;
+    margin-top: -18.75rem;
 }
+
 div.rotate {
     transform: rotate(-25deg);
     margin-top: 20px;
@@ -160,16 +166,26 @@ div.rotate:hover {
     transition-duration: 0.5s;
 }
 
+#swirl-logo {
+    background: none;
+    width: 25rem;
+    height: 25rem;
+    margin-top: 2rem;
+    margin-bottom: -8rem;
+    justify-content: center;
+}
+
 h1{
-    font-size: 50px;
+    font-size: 3.25rem;
 }
 
 h2{
-    font-size: 35px;
+    font-size: 2.5rem;
+    padding-left: 1rem;
 }
 
 h3{
-    font-size: 25px;
+    font-size: 1.75rem;
 }
 
 button{
@@ -195,11 +211,10 @@ p2{
 
 /* make lists prettier!! */
 
-
 list.req {
     margin-left: 200px;
     list-style-type: decimal;
-    color: #B875FF;
+    background-color:var(--navbar-bg);
 }
 
 div.list {
@@ -231,13 +246,7 @@ hr{
 }
 
 .sprinkle{
-    height: 15px;
-    width: 25px;
-    background-color: #25C7E0;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 100px;
-    position: sticky;
+
 }
 
 a:hover{
@@ -248,9 +257,26 @@ a:hover{
 
 .sprinkles__img{
     opacity: 65%;
+    height: 5rem;
+    width: 2rem;
+    background-color: #25C7E0;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    overflow: hidden
 }
+
 .sprinkles__img:hover{
     opacity: 1;
+}
+
+div.main-content{
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: var(--background);
+    border-radius: 20px;
 }
 
 footer{
@@ -260,7 +286,7 @@ footer{
     align-items: center;
     display: flex;
     width: 100%;
-    position: absolute;
+    position: relative;
 }
 
 ::selection {
@@ -268,3 +294,57 @@ footer{
     color: rgb(255, 255, 255);
 }
 
+
+/* Mobile Media Queries Resizing*/
+
+
+@media (max-width: 700px) {
+    .navbar {
+        height: 3em;
+        font-size: 1em;
+    }
+
+    .navbar__links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--navbar-bg);
+        width: 100%;
+        text-align: center;
+        padding: 1em 0;
+    }
+
+    .navbar__links.active {
+        display: flex;
+    }
+
+    .navbar__links .navbar__btn{
+        padding: 0 0.1rem;
+    }
+
+    .banner img{
+        width: 1em;
+    }
+
+    #circle {
+        height: 18rem;
+        width: 25rem;
+    }
+
+    #swirl-logo {
+        width: 10rem;
+        height: 10rem;
+        margin-top: 1rem;
+        margin-bottom: -4rem;
+    }
+    div.rotate {
+        margin-left: 3rem;
+        font-size: 1rem;
+        padding-left: 2rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+
+}
