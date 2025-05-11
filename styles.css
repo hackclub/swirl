@@ -328,6 +328,7 @@ footer{
     #circle {
         height: 18rem;
         width: 25rem;
+        margin-top: -16rem;
     }
 
     #swirl-logo {
