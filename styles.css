@@ -1,24 +1,17 @@
 /* Website designed by @blu on the Hack Club Slack */
-:root{
-    --navbar-bg: #B875FF;
-    --nav-text: #ffffff;
-    --background: #FDE09D;
-    --text-n-footer: #5D5031;
-    --button-text: #C289FF;
-}
 
 * {
     box-sizing: border-box;
     color: #5D5031;
     margin: 0;
     padding: 0;
-    font-family: "Poppins", sans-serif;
-    font-weight: 520;
+    font-family: "Preahvihear", sans-serif;
+    font-weight: 400;
 }
 
-h, h1, h3, h4, h5, h6, p, p2, li, footer {
-    padding-left: 2.5em;
-    padding-right: 2.5em;
+h, h1, h2, h3, h4, h5, h6, p, p2, li, footer {
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 
@@ -34,68 +27,69 @@ Navbar code based from: dhyans.xyz -(modified)
 .navbar {
     padding: 0;
     margin: 0;
-    background-color: var(--navbar-bg);
-    height: 5em;
+    background-color: #B875FF;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
-    position: sticky;
+    font-size: 20px;
+    position : sticky;
     top: 0;
     z-index: 1000;
     font-family: "Preahvihear", sans-serif;
     font-weight: 700;
-    width: 100%;
 }
 
-.navbar__container {
-    background-color:var(--navbar-bg);
+.navbar__container{
+    background-color: #B875FF;
     display: flex;
-    justify-content: flex-end;
-    height: 5em;
+    justify-content: space-between;
+    height: 80px;
     z-index: 1;
     width: 100%;
-    max-width: 100%;
+    max-width: 5000px;
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 0 600px;
 }
 
-.navbar__menu {
+.navbar__menu{
     padding: 0;
-    background-color:var(--navbar-bg);
+    background-color: #B875FF;
     display: flex;
     align-items: center;
     list-style: none;
     text-align: center;
+    margin: 0;
 }
 
 .navbar__item {
     padding: 0;
-    background-color:var(--navbar-bg);
-    height: 5em;
+    background-color: #B875FF;
+    height: 80px;
     margin: 0;
 }
 
-.navbar__links {
-    background-color:var(--navbar-bg);
+.navbar__links{
+    background-color: #B875FF;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 0 1.5rem;
+    padding: 0 20px;
     height: 100%;
+
 }
 
 .navbar__btn {
     background-color: lightskyblue;
-    border-radius: 1em;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-decoration: none;
-    padding: 0 1.5rem;
+    padding: 0 20px;
     width: 100%;
 }
 
@@ -118,8 +112,9 @@ Navbar code based from: dhyans.xyz -(modified)
     z-index: 1001;
 }
 
+
 .banner img {
-    height: 5em;
+    height: 80px;
 }
 
 .banner:hover img {
@@ -144,14 +139,17 @@ Navbar code based from: dhyans.xyz -(modified)
 
 /* swirl background */
 #circle {
-    height: 38rem;
-    width: 55rem;
-    background-color:var(--navbar-bg);
+    height: 550px;
+    width: 800px;
+    background-color: #B875FF;
     border-radius: 50%;
     position: sticky;
+<<<<<<< HEAD
     margin-top: -21rem;
+=======
+    margin-top: -300px;
+>>>>>>> parent of d3ec20d (v2)
 }
-
 div.rotate {
     transform: rotate(-25deg);
     margin-top: 20px;
@@ -166,26 +164,16 @@ div.rotate:hover {
     transition-duration: 0.5s;
 }
 
-#swirl-logo {
-    background: none;
-    width: 25rem;
-    height: 25rem;
-    margin-top: 2rem;
-    margin-bottom: -8rem;
-    justify-content: center;
-}
-
 h1{
-    font-size: 3.25rem;
+    font-size: 50px;
 }
 
 h2{
-    font-size: 2.5rem;
-    padding-left: 1rem;
+    font-size: 35px;
 }
 
 h3{
-    font-size: 1.75rem;
+    font-size: 25px;
 }
 
 button{
@@ -211,10 +199,11 @@ p2{
 
 /* make lists prettier!! */
 
+
 list.req {
     margin-left: 200px;
     list-style-type: decimal;
-    background-color:var(--navbar-bg);
+    color: #B875FF;
 }
 
 div.list {
@@ -246,7 +235,13 @@ hr{
 }
 
 .sprinkle{
-
+    height: 15px;
+    width: 25px;
+    background-color: #25C7E0;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 100px;
+    position: sticky;
 }
 
 a:hover{
@@ -257,26 +252,9 @@ a:hover{
 
 .sprinkles__img{
     opacity: 65%;
-    height: 5rem;
-    width: 2rem;
-    background-color: #25C7E0;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 10;
-    overflow: hidden
 }
-
 .sprinkles__img:hover{
     opacity: 1;
-}
-
-div.main-content{
-    margin-left: 2.5em;
-    margin-right: 2.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background: var(--background);
-    border-radius: 20px;
 }
 
 footer{
@@ -286,7 +264,7 @@ footer{
     align-items: center;
     display: flex;
     width: 100%;
-    position: relative;
+    position: absolute;
 }
 
 ::selection {
@@ -294,6 +272,7 @@ footer{
     color: rgb(255, 255, 255);
 }
 
+<<<<<<< HEAD
 
 /* Mobile Media Queries Resizing*/
 
@@ -352,3 +331,5 @@ footer{
     }
 
 }
+=======
+>>>>>>> parent of d3ec20d (v2)

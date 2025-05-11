@@ -2,39 +2,31 @@
 *{
     z-index: 10;
 }
-#circle {
-    height: 38rem;
-    width: 55rem;
-    background-color:var(--navbar-bg);
-    border-radius: 50%;
-    position: sticky;
-    margin-top: -18.75rem;
-}
+
 #circle_sub {
-    height: 25rem;
-    width: 31rem;
+    height: 400px;
+    width: 500px;
     background-color: #B875FF;
     border-radius: 50%;
     position: sticky;
-    float: right;
-    margin-top: -12rem;
-    margin-right: -1rem;
+   float: right;
+    margin-top: -300px;
+    margin-right: -5px;
     justify-content: center;
     justify-items: center;
     justify-self: center;
     text-align: center;
-    overflow: clip;
 }
 
 #circle2_sub {
-    height: 12.5rem;
-    width: 25rem;
+    height: 200px;
+    width: 300px;
     background-color: #B875FF;
     border-radius: 50%;
     position: sticky;
     float: right;
-    margin-top: -5rem;
-    margin-right: -4rem;
+    margin-top: -200px;
+    margin-right: -105px;
     justify-content: center;
     justify-items: center;
     justify-self: center;
@@ -62,35 +54,10 @@ div.rotate_sub {
     color: white;
 }
 
-iframe {
-    width: 60%;
-}
-
 div.rotate_sub:hover {
     color: #5D5031;
     transition-duration: 0.5s;
 }
 
-@media (max-width: 700px) {
-
-    #circle2_sub {
-        height: 12rem;
-        width: 15rem;
-        padding-left: -5rem;
-        margin-bottom: -1rem;
-        margin-top: -11rem;
-        margin-right: 5rem;
-        background-color: transparent;
-
-    }
-
-    #swirlText {
-        z-index: 999999;
-    }
-
-    iframe {
-        width: 95%;
-    }
-}
 
 
