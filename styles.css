@@ -149,7 +149,7 @@ Navbar code based from: dhyans.xyz -(modified)
     background-color:var(--navbar-bg);
     border-radius: 50%;
     position: sticky;
-    margin-top: -18.75rem;
+    margin-top: -21rem;
 }
 
 div.rotate {
