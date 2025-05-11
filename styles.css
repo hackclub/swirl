@@ -144,11 +144,7 @@ Navbar code based from: dhyans.xyz -(modified)
     background-color: #B875FF;
     border-radius: 50%;
     position: sticky;
-<<<<<<< HEAD
-    margin-top: -21rem;
-=======
     margin-top: -300px;
->>>>>>> parent of d3ec20d (v2)
 }
 div.rotate {
     transform: rotate(-25deg);
@@ -271,65 +267,3 @@ footer{
     background-color: rgba(0, 0, 0, 0.8);
     color: rgb(255, 255, 255);
 }
-
-<<<<<<< HEAD
-
-/* Mobile Media Queries Resizing*/
-
-
-@media (max-width: 700px) {
-    .navbar {
-        height: 3em;
-        font-size: 1em;
-    }
-
-    .navbar__links {
-        display: none;
-        flex-direction: column;
-        background-color: var(--navbar-bg);
-        width: 100%;
-        text-align: center;
-        padding: 1em 0;
-    }
-
-    .navbar__links.active {
-        display: flex;
-    }
-
-    .navbar__links .navbar__btn{
-        padding: 0 0.1rem;
-    }
-
-    .banner img{
-        width: 1em;
-    }
-
-    #circle {
-        height: 18rem;
-        width: 25rem;
-        margin-top: -16rem;
-    }
-
-    #swirl-logo {
-        width: 10rem;
-        height: 10rem;
-        margin-top: 1rem;
-        margin-bottom: -4rem;
-    }
-    div.rotate {
-        margin-left: 3rem;
-        font-size: 1rem;
-        padding-left: 2rem;
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
-
-    #main-text {
-        font-size: 2rem;
-    }
-
-}
-=======
->>>>>>> parent of d3ec20d (v2)
