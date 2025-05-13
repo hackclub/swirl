@@ -91,6 +91,12 @@ div.rotate_sub:hover {
     iframe {
         width: 95%;
     }
+
+    img.swirl-req-img {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
 }
 
 

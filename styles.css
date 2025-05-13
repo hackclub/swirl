@@ -228,13 +228,13 @@ div.list_indent {
 
 img.swirl-req-img {
     float: right;
-    width: 250px;
-    height: 500px;
+    width: 15rem;
+    height: 31rem;
     transform: none;
     position: relative;
-    top: -100px;
-    margin-right: 400px;
-    margin-bottom: -100px;
+    top: -6.25rem;
+    margin-right: 8rem;
+    margin-bottom: -6.25rem;
 
 }
 
