@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -23,6 +24,9 @@
     background: #FFFACC;
     background: radial-gradient(circle, rgba(255, 250, 204, 1) 0%, rgba(253, 247, 157, 1) 30%, rgba(253, 224, 157, 1) 100%);
     ">
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<script src="gallery.js"></script>
+<script src="api.js"></script>
 
 <!-- Navbar -->
 <nav class="navbar">
@@ -76,28 +80,28 @@
 <br>
 
 <h2>Awesome Projects!</h2>
-<script src="api.js"></script>
 
-<br><br><br><br>
-<h2>This looks pretty empty right now...</h2>
+<br><br><br><br><br>
 <br>
 <div class="main-content" style="border: #7A725E; border-width: 10px; border-style: solid; border-radius: 20px; padding: 20px; border-left: transparent; border-right: transparent;">
-  <h3>
-    <br>
-    Swirl currently has <span id="swirl-ships">Loading API...</span> submissions in the YSWS Database!
-    We are working on getting this page automated.
-    In the meantime, check out #swirl-ships on Slack to see how other people completed their projects!
-  </h3>
-  <br>  <br>
   <center>
+    <h3>
+      <br>
+      Swirl currently has <span id="swirl-ships">Loading API...</span> submissions in the YSWS Database!
+    </h3>
     <br>
-    <h2>Submit a project and it may end up here 👀</h2>
+    <h3>When approved, submissions will appear in #swirl-submissions</h3>
+    <br>
+
+    <br>
+    <h2>Submit a project and it may end up below 👀</h2>
     <br>
   </center>
-
 </div>
 
-
+<div id="gallery" style="background: #FFFACC; padding: 5rem;">
+  <!-- Projects go here from data.yml loaded through gallery.js --->
+</div>
 
 <!-- Sprinkles to go here :) -->
 <center>
