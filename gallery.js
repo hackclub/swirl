@@ -1,4 +1,4 @@
-const IMAGE_HOST = 'https://yourdomain.com';
+const IMAGE_HOST = 'https://hackclub.com';
 const FALLBACK_IMAGES = [
     //ADD FALLBACK IMAGES HERE!
     'https://hc-cdn.hel1.your-objectstorage.com/s/v3/b62df713cb00bdfe9d2d3910319da7babce118af_waffle.png',
@@ -67,7 +67,7 @@ fetch('data.yaml')
 
             // custom onerror handler attachment to randomize fallback imgs
             const img = document.getElementById(imgId);
-            img.onerror = function() {
+            img.onerror = function () {
                 this.onerror = null;
                 this.src = randomFallback;
             };

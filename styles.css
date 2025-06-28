@@ -193,6 +193,7 @@ button{
     background-color: #ffffff;
     border-radius: 15px;
     margin-top: 20px;
+    padding: 0em 2em;
 }
 
 button:hover {
