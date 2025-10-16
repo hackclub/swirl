@@ -3,13 +3,17 @@
     --navbar-bg: #B875FF;
     --nav-text: #ffffff;
     --background: #FDE09D;
+    --background-alt: #ffcfa2;
     --text-n-footer: #5D5031;
     --button-text: #C289FF;
+    --box-hover: #FFC289;
+    --dark-box: #dea876;
+    --dark-box-hover: #be8f64;
 }
 
 * {
     box-sizing: border-box;
-    color: #5D5031;
+    color: var(--text-n-footer);
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
@@ -197,17 +201,21 @@ button{
 }
 
 button:hover {
-    background-color: #fad4c5;
+    background-color: var(--box-hover);
     font-size: 21px;
-
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
 }
 
 p{
     font-size: 20px;
 }
 
-p2{
+div.inspiration{
     font-size: 21px;
+}
+
+div.inspiration a {
 }
 
 /* make lists prettier!! */
@@ -260,7 +268,7 @@ a:hover{
     opacity: 65%;
     height: 5rem;
     width: 2rem;
-    background-color: #25C7E0;
+    background-color: var(--box-hover);
     border-radius: 50%;
     position: absolute;
     z-index: 10;
@@ -290,6 +298,10 @@ footer{
     position: relative;
 }
 
+footer a {
+    color: #ffffff;
+}
+
 ::selection {
     background-color: rgba(0, 0, 0, 0.8);
     color: rgb(255, 255, 255);
@@ -307,7 +319,7 @@ footer{
 
 .gallery-item {
     padding: 1 rem auto;
-    background: #f8f8f8;
+    background: var(--dark-box);
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -316,9 +328,9 @@ footer{
 }
 
 .gallery-item:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: transform 0.5s ease;
-    background-color: #B3F5FF;
+    background-color: var(--dark-box-hover);
 }
 
 .gallery-item a:hover {
@@ -326,10 +338,18 @@ footer{
     transition: none;
 }
 
-.gallery-item button:hover {
-    background-color: #E0C3FF;
+
+
+.gallery-item button {
+    color: #ffd5ae;
+    background-color: #aa815b;
 }
 
+
+.gallery-item button:hover {
+
+    font-color: #483422;
+}
 
 /* Mobile Media Queries Resizing*/
 @media (max-width: 700px) {
@@ -386,4 +406,29 @@ footer{
         font-size: 2rem;
     }
 
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin: 2rem 1rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--dark-box);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.item img {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
 }
