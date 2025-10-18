@@ -1,12 +1,12 @@
 /* Website designed by @blu on the Hack Club Slack */
-:root{
-    --navbar-bg: #B875FF;
+:root {
+    --navbar-bg: #b875ff;
     --nav-text: #ffffff;
-    --background: #FDE09D;
+    --background: #fde09d;
     --background-alt: #ffcfa2;
-    --text-n-footer: #5D5031;
-    --button-text: #C289FF;
-    --box-hover: #FFC289;
+    --text-n-footer: #5d5031;
+    --button-text: #c289ff;
+    --box-hover: #ffc289;
     --dark-box: #dea876;
     --dark-box-hover: #be8f64;
 }
@@ -16,18 +16,24 @@
     color: var(--text-n-footer);
     margin: 0;
     padding: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 520;
 }
 
-h, h1, h3, h4, h5, h6, p, p2, li, footer {
+h1,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+footer {
     padding-left: 2.5em;
     padding-right: 2.5em;
 }
 
-
 .preahvihear-regular {
-    font-family: "Preahvihear", sans-serif;
+    font-family: 'Preahvihear', sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -47,13 +53,13 @@ Navbar code based from: dhyans.xyz -(modified)
     position: sticky;
     top: 0;
     z-index: 1000;
-    font-family: "Preahvihear", sans-serif;
+    font-family: 'Preahvihear', sans-serif;
     font-weight: 700;
     width: 100%;
 }
 
 .navbar__container {
-    background-color:var(--navbar-bg);
+    background-color: var(--navbar-bg);
     display: flex;
     justify-content: flex-end;
     height: 5em;
@@ -66,7 +72,7 @@ Navbar code based from: dhyans.xyz -(modified)
 
 .navbar__menu {
     padding: 0;
-    background-color:var(--navbar-bg);
+    background-color: var(--navbar-bg);
     display: flex;
     align-items: center;
     list-style: none;
@@ -75,13 +81,13 @@ Navbar code based from: dhyans.xyz -(modified)
 
 .navbar__item {
     padding: 0;
-    background-color:var(--navbar-bg);
+    background-color: var(--navbar-bg);
     height: 5em;
     margin: 0;
 }
 
 .navbar__links {
-    background-color:var(--navbar-bg);
+    background-color: var(--navbar-bg);
     color: white;
     display: flex;
     align-items: center;
@@ -150,7 +156,7 @@ Navbar code based from: dhyans.xyz -(modified)
 #circle {
     height: 38rem;
     width: 55rem;
-    background-color:var(--navbar-bg);
+    background-color: var(--navbar-bg);
     border-radius: 50%;
     position: sticky;
     margin-top: -21rem;
@@ -166,7 +172,7 @@ div.rotate {
 }
 
 div.rotate:hover {
-    color: #5D5031;
+    color: #5d5031;
     transition-duration: 0.5s;
 }
 
@@ -179,20 +185,20 @@ div.rotate:hover {
     justify-content: center;
 }
 
-h1{
+h1 {
     font-size: 3.25rem;
 }
 
-h2{
+h2 {
     font-size: 2.5rem;
     padding-left: 1rem;
 }
 
-h3{
+h3 {
     font-size: 1.75rem;
 }
 
-button{
+button {
     font-size: 20px;
     background-color: #ffffff;
     border-radius: 15px;
@@ -207,23 +213,19 @@ button:hover {
     transition: transform 0.4s ease;
 }
 
-p{
+p {
     font-size: 20px;
 }
 
-div.inspiration{
+div.inspiration {
     font-size: 21px;
 }
 
-div.inspiration a {
-}
-
 /* make lists prettier!! */
-
 list.req {
     margin-left: 200px;
     list-style-type: decimal;
-    background-color:var(--navbar-bg);
+    background-color: var(--navbar-bg);
 }
 
 div.list {
@@ -244,27 +246,22 @@ img.swirl-req-img {
     top: -6.25rem;
     margin-right: 8rem;
     margin-bottom: -6.25rem;
-
 }
 
-hr{
+hr {
     border-color: sandybrown;
     border-radius: 20px;
     border-style: dotted;
-    border-width: 10px;"
+    border-width: 10px;
 }
 
-.sprinkle{
-
-}
-
-a:hover{
+a:hover {
     color: black;
     transition-duration: 0.75s;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.675);
 }
 
-.sprinkles__img{
+.sprinkles__img {
     opacity: 65%;
     height: 5rem;
     width: 2rem;
@@ -272,14 +269,14 @@ a:hover{
     border-radius: 50%;
     position: absolute;
     z-index: 10;
-    overflow: hidden
+    overflow: hidden;
 }
 
-.sprinkles__img:hover{
+.sprinkles__img:hover {
     opacity: 1;
 }
 
-div.main-content{
+div.main-content {
     margin-left: 2.5em;
     margin-right: 2.5em;
     padding-top: 1em;
@@ -288,8 +285,8 @@ div.main-content{
     border-radius: 20px;
 }
 
-footer{
-    background-color: #5D5031;
+footer {
+    background-color: #5d5031;
     color: #ffffff;
     justify-content: center;
     align-items: center;
@@ -313,18 +310,17 @@ footer a {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
-    background: #FFFACC;
+    background: #fffacc;
     padding: 5rem;
 }
 
 .gallery-item {
-    padding: 1 rem auto;
     background: var(--dark-box);
     border-radius: 8px;
     padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 1 auto;
+    margin: 1rem;
 }
 
 .gallery-item:hover {
@@ -338,17 +334,13 @@ footer a {
     transition: none;
 }
 
-
-
 .gallery-item button {
     color: #ffd5ae;
     background-color: #aa815b;
 }
 
-
 .gallery-item button:hover {
-
-    font-color: #483422;
+    color: #483422;
 }
 
 /* Mobile Media Queries Resizing*/
@@ -405,9 +397,7 @@ footer a {
     #main-text {
         font-size: 2rem;
     }
-
 }
-
 
 .grid {
     display: grid;

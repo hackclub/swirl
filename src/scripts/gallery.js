@@ -12,10 +12,9 @@ const FALLBACK_IMAGES = [
     'https://hc-cdn.hel1.your-objectstorage.com/s/v3/c34a3834cf6e419da4cfc2147b2bf370e86c3e95_alb-swirl.png',
 ];
 
-
-fetch('data.yaml')
-    .then(response => response.text())
-    .then(yamlText => {
+fetch('/data.yaml')
+    .then((response) => response.text())
+    .then((yamlText) => {
         const data = jsyaml.load(yamlText);
         const gallery = document.getElementById('gallery');
         gallery.innerHTML = '';
@@ -26,13 +25,19 @@ fetch('data.yaml')
             const demoUrl = fields['Playable URL'] || '#';
             const sourceUrl = fields['Code URL'] || '#';
 
-            let screenshot = IMAGE_HOST + '/images/assets/png/sprinkles_goof.png';
+            let screenshot =
+                IMAGE_HOST + '/images/assets/png/sprinkles_goof.png';
             if (fields['Screenshot']) {
                 if (Array.isArray(fields['Screenshot'])) {
                     if (fields['Screenshot'][0]) {
-                        screenshot = fields['Screenshot'][0].url || fields['Screenshot'][0];
+                        screenshot =
+                            fields['Screenshot'][0].url ||
+                            fields['Screenshot'][0];
                     }
-                } else if (typeof fields['Screenshot'] === 'object' && fields['Screenshot'].url) {
+                } else if (
+                    typeof fields['Screenshot'] === 'object' &&
+                    fields['Screenshot'].url
+                ) {
                     screenshot = fields['Screenshot'].url;
                 } else if (typeof fields['Screenshot'] === 'string') {
                     screenshot = fields['Screenshot'];
@@ -40,16 +45,18 @@ fetch('data.yaml')
             }
 
             // Prepend IMAGE_HOST if not absolute
-            if (
-                screenshot &&
-                !/^https?:\/\//.test(screenshot)
-            ) {
-                screenshot = IMAGE_HOST + (screenshot.startsWith('/') ? '' : '/') + screenshot;
+            if (screenshot && !/^https?:\/\//.test(screenshot)) {
+                screenshot =
+                    IMAGE_HOST +
+                    (screenshot.startsWith('/') ? '' : '/') +
+                    screenshot;
             }
 
             // Falback img randomizer
-            const randomFallback = FALLBACK_IMAGES[Math.floor(Math.random() * FALLBACK_IMAGES.length)];
-
+            const randomFallback =
+                FALLBACK_IMAGES[
+                    Math.floor(Math.random() * FALLBACK_IMAGES.length)
+                ];
 
             const imgId = `gallery-img-${idx}`;
             const item = document.createElement('div');
@@ -64,19 +71,16 @@ fetch('data.yaml')
             `;
             gallery.appendChild(item);
 
-
             // custom onerror handler attachment to randomize fallback imgs
             const img = document.getElementById(imgId);
             img.onerror = function () {
                 this.onerror = null;
                 this.src = randomFallback;
             };
-
-
         });
     })
-
-    .catch(err => {
-        document.getElementById('gallery').innerHTML = '<p>Failed to load gallery.</p>';
+    .catch((err) => {
+        document.getElementById('gallery').innerHTML =
+            '<p>Failed to load gallery.</p>';
         console.error(err);
     });
