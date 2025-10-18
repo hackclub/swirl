@@ -12,7 +12,7 @@ const FALLBACK_IMAGES = [
     'https://hc-cdn.hel1.your-objectstorage.com/s/v3/c34a3834cf6e419da4cfc2147b2bf370e86c3e95_alb-swirl.png',
 ];
 
-fetch('data.yaml')
+fetch('/data.yaml')
     .then((response) => response.text())
     .then((yamlText) => {
         const data = jsyaml.load(yamlText);
