@@ -222,7 +222,6 @@ div.inspiration {
 }
 
 /* make lists prettier!! */
-
 list.req {
     margin-left: 200px;
     list-style-type: decimal;
@@ -316,13 +315,12 @@ footer a {
 }
 
 .gallery-item {
-    padding: 1 rem auto;
     background: var(--dark-box);
     border-radius: 8px;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 1 auto;
+    margin: 1rem;
 }
 
 .gallery-item:hover {
