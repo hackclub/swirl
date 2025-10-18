@@ -79,7 +79,6 @@ fetch('data.yaml')
             };
         });
     })
-
     .catch((err) => {
         document.getElementById('gallery').innerHTML =
             '<p>Failed to load gallery.</p>';
