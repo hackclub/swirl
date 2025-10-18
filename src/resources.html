@@ -1,185 +1,317 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
-<head>
-
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
     <title>Swirl</title>
 
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/subpage.css">
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/subpage.css" />
 
-    <link rel="icon" type="image/x-icon" href="../assets/png/sprinkles.png">
+    <link rel="icon" type="image/x-icon" href="../assets/png/sprinkles.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Preahvihear&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Preahvihear&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body style="
-    background: #FFFACC;
-    background: radial-gradient(circle, rgba(255, 250, 204, 1) 0%, rgba(253, 247, 157, 1) 30%, rgba(253, 224, 157, 1) 100%);
-    ">
+  <body
+    style="
+      background: #fffacc;
+      background: radial-gradient(
+        circle,
+        rgba(255, 250, 204, 1) 0%,
+        rgba(253, 247, 157, 1) 30%,
+        rgba(253, 224, 157, 1) 100%
+      );
+    "
+  >
+    <!-- Navbar -->
+    <nav class="navbar">
+      <!-- Hack Club Flag -->
+      <a class="banner" href="https://hackclub.com/"
+        ><img
+          style="
+            position: absolute;
+            top: 0;
+            left: 10px;
+            border: 0;
+            width: 128px;
+            z-index: 1000;
+          "
+          src="https://assets.hackclub.com/flag-orpheus-top.svg"
+          alt="Hack Club"
+      /></a>
 
-<!-- Navbar -->
-<nav class="navbar">
-
-    <!-- Hack Club Flag -->
-    <a class="banner" href="https://hackclub.com/"><img style="position: absolute; top: 0; left: 10px; border: 0; width: 128px; z-index: 1000;" src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club"/></a>
-
-    <div class="navbar__container">
-
+      <div class="navbar__container">
         <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="./index.html" class="navbar__links">Home</a>
+          </li>
 
-            <li class="navbar__item">
-                <a href="./index.html" class="navbar__links">Home</a>
-            </li>
+          <li class="navbar__item">
+            <a href="./requirements.html" class="navbar__links">Requirements</a>
+          </li>
 
-            <li class="navbar__item">
-                <a href="./requirements.html" class="navbar__links">Requirements</a>
-            </li>
+          <li class="navbar__item">
+            <a href="./gallery.html" class="navbar__links">Gallery</a>
+          </li>
 
-            <li class="navbar__item">
-                <a href="./gallery.html" class="navbar__links">Gallery</a>
-            </li>
+          <li class="navbar__item">
+            <a href="./resources.html" class="navbar__links">Resources</a>
+          </li>
 
-            <li class="navbar__item">
-                <a href="./resources.html" class="navbar__links">Resources</a>
-            </li>
-
-            <li class="navbar__btn">
-                <a href="https://forms.hackclub.com/swirl" style="padding: 0.25rem;" class="navbar__btn">Submit</a>
-            </li>
-
+          <li class="navbar__btn">
+            <a
+              href="https://forms.hackclub.com/swirl"
+              style="padding: 0.25rem"
+              class="navbar__btn"
+              >Submit</a
+            >
+          </li>
         </ul>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<br>
+    <br />
 
-<div class="subpage__logo">
-    <h1 id="circle_sub">
-        <br>
-        <img id="swirlText" src="../assets/svg/swirl-text.svg" alt="Swirl! Text Logo" style="background: none; width: 300px; height: 350px; margin-bottom: -150px">
-        <br>
-    </h1>
-    <h1 id="circle2_sub" style="width: 19rem" >
-        <div class = "rotate_sub">
-            Resources
-        </div>
-    </h1>
-</div>
-
-<br>
-
-<h2>Okay... so how do I Swirl?</h2>
-<br>
-<h2 style="font-size: 30px">Here's a bunch of stuff to make the process easier!</h2>
-<br>
-
-<div class="main-content">
-    <center><h3>Swirl Specific Resources</h3></center>
-
-    <div class="grid">
-        <div class="item">
-            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e916b7061058e3c9bd62ce021ed91f79c0d68247_screenshot_2025-10-14_at_9.44.18___pm.png" alt="Boba Drops Logo" style="background: none; width: 100%">
-            <a target="_blank" href="https://hack.club/q9zpic" style="margin: 15px; display: block;">Workshop Slidedeck</a>
-        </div>
-        <div class="item">
-            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/38966341130a0f32215c06bee761759c0e5343cf_swirl-yessa.png" alt="Swirl Yessa" style="background: none; width: 100%">
-            <a target="_blank" href="https://hack.club/wy3eo" style="margin: 15px; display: block;">Poster</a>
-            designed by <a target="_blank" href="https://github.com/Ayessaaa">@yessa!</a>
-        </div>
-        <div class="item">
-            <!-- img to add!-->
-            <div style="height: 150px; display: flex; align-items: center; justify-content: center;">image pending</div>
-            <a target="_blank" href="https://hack.club/67hn7h" style="margin: 15px; display: block;">Website Planner</a>
-        </div>
+    <div class="subpage__logo">
+      <h1 id="circle_sub">
+        <br />
+        <img
+          id="swirlText"
+          src="../assets/svg/swirl-text.svg"
+          alt="Swirl! Text Logo"
+          style="
+            background: none;
+            width: 300px;
+            height: 350px;
+            margin-bottom: -150px;
+          "
+        />
+        <br />
+      </h1>
+      <h1 id="circle2_sub" style="width: 19rem">
+        <div class="rotate_sub">Resources</div>
+      </h1>
     </div>
 
-</div>
+    <br />
 
+    <h2>Okay... so how do I Swirl?</h2>
+    <br />
+    <h2 style="font-size: 30px">
+      Here's a bunch of stuff to make the process easier!
+    </h2>
+    <br />
 
-<!-- <a target="_blank" href="" style="margin: 20px; color: #B875FF; cursor: not-allowed">Cheat Sheet (coming soon!)</a> -->
-<center>
-    <button><a href="#faq" style="text-decoration: none; color: #B875FF;" >Jump to FAQ</a> </button>
-</center>
+    <div class="main-content">
+      <center><h3>Swirl Specific Resources</h3></center>
 
-</p>
+      <div class="grid">
+        <div class="item">
+          <img
+            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e916b7061058e3c9bd62ce021ed91f79c0d68247_screenshot_2025-10-14_at_9.44.18___pm.png"
+            alt="Boba Drops Logo"
+            style="background: none; width: 100%"
+          />
+          <a
+            target="_blank"
+            href="https://hack.club/q9zpic"
+            style="margin: 15px; display: block"
+            >Workshop Slidedeck</a
+          >
+        </div>
+        <div class="item">
+          <img
+            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/38966341130a0f32215c06bee761759c0e5343cf_swirl-yessa.png"
+            alt="Swirl Yessa"
+            style="background: none; width: 100%"
+          />
+          <a
+            target="_blank"
+            href="https://hack.club/wy3eo"
+            style="margin: 15px; display: block"
+            >Poster</a
+          >
+          designed by
+          <a target="_blank" href="https://github.com/Ayessaaa">@yessa!</a>
+        </div>
+        <div class="item">
+          <!-- img to add!-->
+          <div
+            style="
+              height: 150px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            image pending
+          </div>
+          <a
+            target="_blank"
+            href="https://hack.club/67hn7h"
+            style="margin: 15px; display: block"
+            >Website Planner</a
+          >
+        </div>
+      </div>
+    </div>
 
-<br><br>
+    <!-- <a target="_blank" href="" style="margin: 20px; color: #B875FF; cursor: not-allowed">Cheat Sheet (coming soon!)</a> -->
+    <center>
+      <button>
+        <a href="#faq" style="text-decoration: none; color: #b875ff"
+          >Jump to FAQ</a
+        >
+      </button>
+    </center>
 
-<div class="main-content">
-    <br>
-    <h3>
-        Other Websites: </h3>
-    <ul>
+    <!-- </p> -->
+
+    <br /><br />
+
+    <div class="main-content">
+      <br />
+      <h3>Other Websites:</h3>
+      <ul>
         <li>
-            <a target="_blank" style="font-size: 20px" href="https://www.w3schools.com/"> W3 Schools</a>
-            <p style="margin-left: 20px">W3 Schools is a great developer resource,
-                and is highly recommended to use to find CSS and HTML features you've never heard about.
-                It also is useful as a guide for elements you have forgotten the syntax of.</p>
+          <a
+            target="_blank"
+            style="font-size: 20px"
+            href="https://www.w3schools.com/"
+          >
+            W3 Schools</a
+          >
+          <p style="margin-left: 20px">
+            W3 Schools is a great developer resource, and is highly recommended
+            to use to find CSS and HTML features you've never heard about. It
+            also is useful as a guide for elements you have forgotten the syntax
+            of.
+          </p>
         </li>
 
         <li>
-            <a target="_blank" style="font-size: 20px" href="https://g.co/kgs/62CmUCj"> Color Picker</a>
-            <p style="margin-left: 20px">The Google Color Picker gives the  information for specific colors, so you can add all sorts of awesome colors!</p>
+          <a
+            target="_blank"
+            style="font-size: 20px"
+            href="https://g.co/kgs/62CmUCj"
+          >
+            Color Picker</a
+          >
+          <p style="margin-left: 20px">
+            The Google Color Picker gives the information for specific colors,
+            so you can add all sorts of awesome colors!
+          </p>
         </li>
 
         <li>
-            <a target="_blank" style="font-size: 20px" href="https://caniuse.com/"> Can I Use</a>
-            <p style="margin-left: 20px">Some browsers may not support some features, CanIUse tells you what is and isn't supported so you know you aren't going crazy.
-                This was useful for me when trying to figure out why my .svg favicon wasn't working in Safari.</p>
+          <a
+            target="_blank"
+            style="font-size: 20px"
+            href="https://caniuse.com/"
+          >
+            Can I Use</a
+          >
+          <p style="margin-left: 20px">
+            Some browsers may not support some features, CanIUse tells you what
+            is and isn't supported so you know you aren't going crazy. This was
+            useful for me when trying to figure out why my .svg favicon wasn't
+            working in Safari.
+          </p>
         </li>
 
         <li>
-            <a target="_blank" style="font-size: 20px" href="https://fonts.google.com/"> Google Fonts</a>
-            <p style="margin-left: 20px">Google Fonts lets you choose from a vast variety of fonts and import them into your website,
-                this can help you change the whole vibe of your website!</p>
+          <a
+            target="_blank"
+            style="font-size: 20px"
+            href="https://fonts.google.com/"
+          >
+            Google Fonts</a
+          >
+          <p style="margin-left: 20px">
+            Google Fonts lets you choose from a vast variety of fonts and import
+            them into your website, this can help you change the whole vibe of
+            your website!
+          </p>
         </li>
-    </ul>
-</div>
+      </ul>
+    </div>
 
+    <br /><br />
 
-<br><br>
+    <div class="main-content">
+      <br />
+      <h3>How to submit:</h3>
+      <p>
+        After you have crafted your website, it needs to be made open source on
+        Github, and hosted through a service like GitHub Pages. Fill out the
+        submission form linked below to submit.<br />
+        <br />
+        <button>
+          <a
+            target="_blank"
+            href="https://forms.hackclub.com/swirl"
+            style="text-decoration: none; color: #b875ff"
+          >
+            ‎ ‎ ‎ ‎ ‎ Submission Form ‎ ‎ ‎ ‎ ‎
+          </a>
+        </button>
+        <button>
+          <a
+            target="_blank"
+            href="https://forms.hackclub.com/t/8JgE9XsQanus"
+            style="text-decoration: none; color: #b875ff"
+          >
+            ‎ ‎ ‎ ‎ ‎ Run an Event / Club Meeting ‎ ‎ ‎ ‎ ‎
+          </a>
+        </button>
+      </p>
+      <br />
+    </div>
 
-<div class="main-content">
-    <br>
-    <h3>How to submit:</h3>
-    <p>After you have crafted your website, it needs to be made open source on Github, and hosted through a service like GitHub Pages.
-        Fill out the submission form linked below to submit.<br>
-        <br>
-        <button><a target="_blank" href="https://forms.hackclub.com/swirl" style="text-decoration: none; color: #B875FF;" > ‎ ‎ ‎ ‎ ‎ Submission Form ‎ ‎ ‎ ‎ ‎ </a> </button>
-        <button><a target="_blank" href="https://forms.hackclub.com/t/8JgE9XsQanus" style="text-decoration: none; color: #B875FF;" > ‎ ‎ ‎ ‎ ‎ Run an Event / Club Meeting ‎ ‎ ‎ ‎ ‎ </a> </button>
-    </p>
-    <br>
-</div>
-
-<!--
+    <!--
 <p> Sample Websites: This one!, dhyans.xyz, potatoperks website</p>
 -->
-<br><br>
-<div class="main-content">
-    <br>
-    <h3>Need Help?</h3>
-    <p>
-        1. Read the FAQ (below!)<br>
-        2. Ask in the Slack Channel #swirl <br>
-        3. Message @<a target="_blank" href=https://hackclub.slack.com/team/U0824G9PTFE">dhyan</a> on Slack <br>
-        4. Email <a target="_blank" id="faq" href="mailto:dhyan@hackclub.com">dhyan@hackclub.com</a>
-    </p>
-    <br>
-</div>
-<br>
+    <br /><br />
+    <div class="main-content">
+      <br />
+      <h3>Need Help?</h3>
+      <p>
+        1. Read the FAQ (below!)<br />
+        2. Ask in the Slack Channel #swirl <br />
+        3. Message @<a
+          target="_blank"
+          href="https://hackclub.slack.com/team/U0824G9PTFE"
+          >dhyan</a
+        >
+        on Slack <br />
+        4. Email
+        <a target="_blank" id="faq" href="mailto:dhyan@hackclub.com"
+          >dhyan@hackclub.com</a
+        >
+      </p>
+      <br />
+    </div>
+    <br />
 
-<center>
-    <h1>faq</h1>
-</center>
-<br>
-<!-- Old faq format
+    <center>
+      <h1>faq</h1>
+    </center>
+    <br />
+    <!-- Old faq format
     <h3>How many club meetings should this take?</h3><br>
     <p>Two are recommended to introduce the project, present the slides, let the members work and submit their website.<br>
         A third meeting where everyone presents their project and eats ice cream can also be pretty fun!<br>
@@ -194,43 +326,77 @@
     <p>Nope, this is a part two! You are allowed to expand on your Boba Drops submission as a result. If you choose not to,
     the submission website has to have been created recently.</p>
     -->
-<center>
-    <iframe style="height: 100rem" src="https://docs.google.com/document/d/e/2PACX-1vQFWQL0gCZ4IvwizJ7HZCmVZAwTQ_PtyGaR3zoeAEytMVPP3dXMLH5LiyB7cl86TrkV6lW9xONtUYUM/pub?embedded=true"></iframe>
-</center>
+    <center>
+      <iframe
+        style="height: 100rem"
+        src="https://docs.google.com/document/d/e/2PACX-1vQFWQL0gCZ4IvwizJ7HZCmVZAwTQ_PtyGaR3zoeAEytMVPP3dXMLH5LiyB7cl86TrkV6lW9xONtUYUM/pub?embedded=true"
+      ></iframe>
+    </center>
 
+    <!--
+    <img src="/images/assets/svg/t/sprinkle-r.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 45px; rotate: 31deg">
+    <img src="/images/assets/svg/t/sprinkle-o.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 98deg">
+    <img src="/images/assets/svg/t/sprinkle-y.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 37deg">
+    <img src="/images/assets/svg/t/sprinkle-b.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 03deg">
+    <img src="/images/assets/svg/t/sprinkle-r.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 876deg">
+    <img src="/images/assets/svg/t/sprinkle-o.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 867deg">
+    <img src="/images/assets/svg/t/sprinkle-g.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 345deg">
+    <img src="/images/assets/svg/t/sprinkle-b.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 90deg">
+    <img src="/images/assets/svg/t/sprinkle-r.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 456deg">
+    <img src="/images/assets/svg/t/sprinkle-o.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 89deg">
+    <img src="/images/assets/svg/t/sprinkle-b.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 13deg">
+    -->
 
+    <!-- Sprinkles to go here :) -->
 
-
-<!--
-<img src="/images/assets/svg/t/sprinkle-r.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 45px; rotate: 31deg">
-<img src="/images/assets/svg/t/sprinkle-o.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 98deg">
-<img src="/images/assets/svg/t/sprinkle-y.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 37deg">
-<img src="/images/assets/svg/t/sprinkle-b.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 03deg">
-<img src="/images/assets/svg/t/sprinkle-r.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 876deg">
-<img src="/images/assets/svg/t/sprinkle-o.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 867deg">
-<img src="/images/assets/svg/t/sprinkle-g.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 345deg">
-<img src="/images/assets/svg/t/sprinkle-b.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 90deg">
-<img src="/images/assets/svg/t/sprinkle-r.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 456deg">
-<img src="/images/assets/svg/t/sprinkle-o.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 89deg">
-<img src="/images/assets/svg/t/sprinkle-b.svg" class="sprinkles__img" alt="Red Sprinkle" style="background: none; margin-bottom: 0px; margin-left: 90px; rotate: 13deg">
--->
-
-<!-- Sprinkles to go here :) -->
-
-<br><br><br>
-<center>
-    <button><a target="_blank" href="https://forms.hackclub.com/swirl" style="text-decoration: none; color: #B875FF;">Get your ice cream</a> </button>
-</center>
-<br><br><br>
-<footer>
-    <br>
-    <img src="../assets/other/stickers/orphmoji-yippee.png" alt="Orpheus Yippee!" style="background: none; width: 50px; margin-bottom: 2px; margin-right: 15px">
-    Built & maintained by dhyan for Hack Club
-    <img src="../assets/other/stickers/orphmoji-yippee.png" alt="Orpheus Yippee!" style="background: none; width: 50px; margin-bottom: 2px; margin-left: 20px">
-    <img src="../assets/svg/cherry.svg" alt="Orpheus Yippee!" style="background: none; height: 50px; margin-bottom: 2px; position: absolute; right: 20px; top: -49px">
-    <br><br><br>
-</footer>
-
-</body>
-
+    <br /><br /><br />
+    <center>
+      <button>
+        <a
+          target="_blank"
+          href="https://forms.hackclub.com/swirl"
+          style="text-decoration: none; color: #b875ff"
+          >Get your ice cream</a
+        >
+      </button>
+    </center>
+    <br /><br /><br />
+    <footer>
+      <br />
+      <img
+        src="../assets/other/stickers/orphmoji-yippee.png"
+        alt="Orpheus Yippee!"
+        style="
+          background: none;
+          width: 50px;
+          margin-bottom: 2px;
+          margin-right: 15px;
+        "
+      />
+      Built & maintained by dhyan for Hack Club
+      <img
+        src="../assets/other/stickers/orphmoji-yippee.png"
+        alt="Orpheus Yippee!"
+        style="
+          background: none;
+          width: 50px;
+          margin-bottom: 2px;
+          margin-left: 20px;
+        "
+      />
+      <img
+        src="../assets/svg/cherry.svg"
+        alt="Orpheus Yippee!"
+        style="
+          background: none;
+          height: 50px;
+          margin-bottom: 2px;
+          position: absolute;
+          right: 20px;
+          top: -49px;
+        "
+      />
+      <br /><br /><br />
+    </footer>
+  </body>
 </html>
