@@ -1,21 +1,19 @@
 /* swirl background */
-* {
+*{
     z-index: 10;
 }
-
 #circle {
     height: 38rem;
     width: 55rem;
-    background-color: var(--navbar-bg);
+    background-color:var(--navbar-bg);
     border-radius: 50%;
     position: sticky;
     margin-top: -18.75rem;
 }
-
 #circle_sub {
     height: 25rem;
     width: 31rem;
-    background-color: #b875ff;
+    background-color: #B875FF;
     border-radius: 50%;
     position: sticky;
     float: right;
@@ -31,7 +29,7 @@
 #circle2_sub {
     height: 12.5rem;
     width: 25rem;
-    background-color: #b875ff;
+    background-color: #B875FF;
     border-radius: 50%;
     position: sticky;
     float: right;
@@ -47,7 +45,7 @@
     animation: spin 2s linear;
 }
 
-@keyframes spin {
+@keyframes spin{
     from {
         transform: rotate(0deg);
     }
@@ -69,11 +67,12 @@ iframe {
 }
 
 div.rotate_sub:hover {
-    color: #5d5031;
+    color: #5D5031;
     transition-duration: 0.5s;
 }
 
 @media (max-width: 700px) {
+
     #circle2_sub {
         height: 12rem;
         width: 15rem;
@@ -82,6 +81,7 @@ div.rotate_sub:hover {
         margin-top: -11rem;
         margin-right: 5rem;
         background-color: transparent;
+
     }
 
     #swirlText {
@@ -98,3 +98,5 @@ div.rotate_sub:hover {
         height: 0;
     }
 }
+
+
