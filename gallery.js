@@ -1,15 +1,15 @@
 const IMAGE_HOST = 'https://hackclub.com';
 const FALLBACK_IMAGES = [
     //ADD FALLBACK IMAGES HERE!
-    'https://hc-cdn.hel1.your-objectstorage.com/s/v3/b62df713cb00bdfe9d2d3910319da7babce118af_waffle.png',
-    'https://hc-cdn.hel1.your-objectstorage.com/s/v3/a4cdda8aaa878c3d4f4cfce1e641843a93a7b940_img_0769.png',
-    'https://hc-cdn.hel1.your-objectstorage.com/s/v3/0f50a9029a506bb376d6cefaff3549a441cd9a4b_chatgpt-swirl.png',
-    'https://hc-cdn.hel1.your-objectstorage.com/s/v3/43698bb57a93bd8a977fd85b92f00f33ec4ac611_scrapyard-proj-logo.png',
-    'https://hc-cdn.hel1.your-objectstorage.com/s/v3/27cee257bd6155fd84b14cb2feb003cb570d3fc1_lubabaxn-swirl-1.png',
-    'https://hc-cdn.hel1.your-objectstorage.com/s/v3/fb5257c83deeaaf1d5fce9c6c75a297c7f2241b2_lubabaxn-swirl-2.png',
-    'https://hc-cdn.hel1.your-objectstorage.com/s/v3/e81025c39885d2f1fc1334e16d928d515c8031df_lubabaxn-swirl-3.png',
-    'https://hc-cdn.hel1.your-objectstorage.com/s/v3/3e0f17e9a7e8083ffe562c146ce6ffb8c0f2150e_swirl-sticker-submission.png',
-    'https://hc-cdn.hel1.your-objectstorage.com/s/v3/c34a3834cf6e419da4cfc2147b2bf370e86c3e95_alb-swirl.png',
+    'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/b62df713cb00bdfe9d2d3910319da7babce118af_waffle.png',
+    'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/a4cdda8aaa878c3d4f4cfce1e641843a93a7b940_img_0769.png',
+    'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/0f50a9029a506bb376d6cefaff3549a441cd9a4b_chatgpt-swirl.png',
+    'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/43698bb57a93bd8a977fd85b92f00f33ec4ac611_scrapyard-proj-logo.png',
+    'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/27cee257bd6155fd84b14cb2feb003cb570d3fc1_lubabaxn-swirl-1.png',
+    'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/fb5257c83deeaaf1d5fce9c6c75a297c7f2241b2_lubabaxn-swirl-2.png',
+    'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/e81025c39885d2f1fc1334e16d928d515c8031df_lubabaxn-swirl-3.png',
+    'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/3e0f17e9a7e8083ffe562c146ce6ffb8c0f2150e_swirl-sticker-submission.png',
+    'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/c34a3834cf6e419da4cfc2147b2bf370e86c3e95_alb-swirl.png',
 ];
 
 fetch('/data.yaml')
