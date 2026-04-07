@@ -1,19 +1,50 @@
 /* Website designed by @blu on the Hack Club Slack */
+
+/* ============================================================
+   CSS Custom Properties
+   ============================================================ */
 :root {
+    /* Brand */
     --navbar-bg: #b875ff;
     --nav-text: #ffffff;
+    --button-text: #c289ff;
+
+    /* Backgrounds */
     --background: #fde09d;
     --background-alt: #ffcfa2;
-    --text-n-footer: #5d5031;
-    --button-text: #c289ff;
     --box-hover: #ffc289;
     --dark-box: #dea876;
     --dark-box-hover: #be8f64;
+
+    /* Text & borders */
+    --text-primary: #5d5031;
+    --accent-warm: #94703e;
+    --border-muted: #7a725e;
+
+    /* Ice cream accent palette */
+    --strawberry: #ffb3c6;
+    --strawberry-dark: #e8829b;
+    --strawberry-hover: #ffd6e3;
+    --vanilla: #fff8f0;
+    --chocolate-shadow: #c4845a;
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+body {
+    background: #fffacc;
+    background: radial-gradient(
+        circle,
+        rgba(255, 250, 204, 1) 0%,
+        rgba(253, 247, 157, 1) 30%,
+        rgba(253, 224, 157, 1) 100%
+    );
 }
 
 * {
     box-sizing: border-box;
-    color: var(--text-n-footer);
+    color: var(--text-primary);
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -35,10 +66,21 @@ a, button {
     cursor: pointer;
 }
 
-.preahvihear-regular {
-    font-family: 'Preahvihear', sans-serif;
-    font-weight: 400;
-    font-style: normal;
+h1 { font-size: 3.25rem; }
+h2 { font-size: 2.5rem; padding-left: 1rem; }
+h3 { font-size: 1.75rem; }
+p  { font-size: 20px; }
+
+a:hover {
+    color: black;
+    transition: color 0.75s cubic-bezier(0.55, 0.055, 0.675, 0.675);
+}
+
+hr {
+    border-color: sandybrown;
+    border-radius: 20px;
+    border-style: dotted;
+    border-width: 10px;
 }
 
 html, body {
@@ -46,10 +88,41 @@ html, body {
     /* this will just keep the scroll hidden since there isn't actually real content to scroll for */
     overflow-x: hidden;
 }
+::selection {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+}
 
-/*
-Navbar code based from: dhyans.dev -(modified)
-*/
+/* ============================================================
+   Utility Classes
+   ============================================================ */
+.text-center {
+    text-align: center;
+}
+
+.preahvihear-regular {
+    font-family: 'Preahvihear', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.inline-icon {
+    background: none;
+    width: 20px;
+    vertical-align: middle;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: var(--button-text);
+}
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+
+/* Navbar code based on dhyans.dev (modified) */
 .navbar {
     padding: 0;
     margin: 0;
@@ -72,7 +145,6 @@ Navbar code based from: dhyans.dev -(modified)
     display: flex;
     justify-content: flex-end;
     height: 5em;
-    z-index: 1;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
@@ -106,6 +178,19 @@ Navbar code based from: dhyans.dev -(modified)
     height: 100%;
 }
 
+.navbar__links:hover {
+    color: yellow;
+    transition: color 0.5s;
+}
+
+.navbar__submit-item {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    margin: 0;
+    background-color: var(--navbar-bg);
+}
+
 .navbar__btn {
     background-color: lightskyblue;
     border-radius: 1em;
@@ -114,23 +199,16 @@ Navbar code based from: dhyans.dev -(modified)
     align-items: center;
     color: white;
     text-decoration: none;
-    padding: 0 1.5rem;
-    width: 100%;
-}
-
-.navbar__links:hover {
-    color: yellow;
-    transition-duration: 0.5s;
+    padding: 0.4em 1.5rem;
 }
 
 .navbar__btn:hover {
     color: black;
     background-color: white;
-    transition-timing-function: ease-in;
-    transition-duration: 0.5s;
+    transition: background-color 0.5s ease-in, color 0.5s ease-in;
 }
 
-/* Banner Code From Boba Drops And/Or Hack Club Brand Website */
+/* Hack Club flag banner (code from Hack Club brand website) */
 .banner {
     top: -20px;
     left: 10px;
@@ -138,7 +216,12 @@ Navbar code based from: dhyans.dev -(modified)
 }
 
 .banner img {
-    height: 5em;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    border: 0;
+    width: 128px;
+    z-index: 1000;
 }
 
 .banner:hover img {
@@ -147,21 +230,19 @@ Navbar code based from: dhyans.dev -(modified)
 
 @media (prefers-reduced-motion: reduce) {
     .banner:hover img {
-        transition: 0.1875s cubic-bezier(0.375, 0, 0.675, 1) transform;
+        transition: transform 0.1875s cubic-bezier(0.375, 0, 0.675, 1);
         transform-origin: top left;
     }
 }
 
 @keyframes wave-flag {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(-5deg);
-    }
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-5deg); }
 }
 
-/* swirl background */
+/* ============================================================
+   Homepage Hero
+   ============================================================ */
 #circle {
     height: 38rem;
     width: 55rem;
@@ -169,6 +250,8 @@ Navbar code based from: dhyans.dev -(modified)
     border-radius: 50%;
     position: sticky;
     margin-top: -21rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div.rotate {
@@ -181,8 +264,8 @@ div.rotate {
 }
 
 div.rotate:hover {
-    color: #5d5031;
-    transition-duration: 0.5s;
+    color: var(--text-primary);
+    transition: color 0.5s;
 }
 
 #swirl-logo {
@@ -191,50 +274,48 @@ div.rotate:hover {
     height: 25rem;
     margin-top: 2rem;
     margin-bottom: -8rem;
-    justify-content: center;
 }
 
-h1 {
-    font-size: 3.25rem;
+#main-text {
+    text-align: center;
 }
 
-h2 {
-    font-size: 2.5rem;
-    padding-left: 1rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-}
-
+/* ============================================================
+   Buttons — ice cream scoop style
+   ============================================================ */
 button {
-    font-size: 20px;
-    background-color: #ffffff;
-    border-radius: 15px;
+    font-size: 1.25rem;
+    background: linear-gradient(160deg, var(--vanilla), var(--strawberry-hover));
+    border: 2px solid var(--strawberry);
+    border-radius: 999px; /* pill shape like a scoop */
     margin-top: 20px;
-    padding: 0em 2em;
+    padding: 0.4em 2em;
+    box-shadow: 0 4px 0 var(--strawberry-dark);
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: var(--box-hover);
-    font-size: 21px;
-    transform: scale(1.1);
-    transition: transform 0.4s ease;
+    background: linear-gradient(160deg, var(--strawberry-hover), var(--strawberry));
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--strawberry-dark);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
 }
 
-p {
-    font-size: 20px;
+/* ============================================================
+   Content Blocks
+   ============================================================ */
+div.main-content {
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: var(--background);
+    border-radius: 24px;
+    border: 2px solid rgba(184, 117, 255, 0.15);
 }
 
 div.inspiration {
     font-size: 21px;
-}
-
-/* make lists prettier!! */
-list.req {
-    margin-left: 200px;
-    list-style-type: decimal;
-    background-color: var(--navbar-bg);
 }
 
 div.list {
@@ -246,56 +327,131 @@ div.list_indent {
     margin-left: 60px;
 }
 
+/* ============================================================
+   Gallery (gallery.html)
+   ============================================================ */
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    background: var(--background-alt);
+    padding: 5rem;
+}
+
+#swirl-ships {
+    color: var(--accent-warm);
+}
+
+.gallery-info {
+    background: linear-gradient(135deg, var(--box-hover), var(--strawberry-hover));
+    border-radius: 24px;
+    padding: 20px;
+    border: 10px solid var(--strawberry);
+    border-right-color: transparent;
+    border-left-color: transparent;
+}
+
+.gallery-item {
+    background: var(--dark-box);
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 4px 0 var(--chocolate-shadow);
+    text-align: center;
+    margin: 1rem;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    background-color: var(--dark-box-hover);
+}
+
+.gallery-item a:hover {
+    transform: none;
+    transition: none;
+}
+
+.gallery-item__title {
+    font-size: 1rem;
+}
+
+.gallery-item__img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 20%;
+    margin: 1rem 0;
+    object-fit: cover;
+}
+
+.gallery-item__actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.gallery-item button {
+    color: var(--vanilla);
+    background: linear-gradient(160deg, #c4956a, #a06840);
+    border-color: var(--chocolate-shadow);
+    box-shadow: 0 4px 0 #7a4e2e;
+}
+
+.gallery-item button:hover {
+    background: linear-gradient(160deg, #d4a57a, #b07850);
+    color: var(--vanilla);
+    box-shadow: 0 2px 0 #7a4e2e;
+}
+
+/* ============================================================
+   Requirements Grid (requirements.html)
+   ============================================================ */
+.req-grid {
+    margin: auto;
+    max-width: 1000px;
+    font-size: 1.2em;
+    text-align: center;
+    display: grid;
+    row-gap: 0.4em;
+    column-gap: 2em;
+    grid-template-areas:
+        'req-a req-b req-c'
+        'img-a img-b img-c'
+        'space space space'
+        'req-d req-e req-f'
+        'img-d img-e img-f'
+        '. req-h.'
+        '. img-h .';
+    padding: 2rem;
+}
+
+.req-grid img {
+    height: 100px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.space {
+    grid-area: space;
+    padding: 10rem;
+}
+
 img.swirl-req-img {
     float: right;
     width: 15rem;
     height: 31rem;
-    transform: none;
     position: relative;
     top: -6.25rem;
     margin-right: 8rem;
     margin-bottom: -6.25rem;
 }
 
-hr {
-    border-color: sandybrown;
-    border-radius: 20px;
-    border-style: dotted;
-    border-width: 10px;
-}
 
-a:hover {
-    color: black;
-    transition-duration: 0.75s;
-    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.675);
-}
-
-.sprinkles__img {
-    opacity: 65%;
-    height: 5rem;
-    width: 2rem;
-    background-color: var(--box-hover);
-    border-radius: 50%;
-    position: absolute;
-    z-index: 10;
-    overflow: hidden;
-}
-
-.sprinkles__img:hover {
-    opacity: 1;
-}
-
-div.main-content {
-    margin-left: 2.5em;
-    margin-right: 2.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background: var(--background);
-    border-radius: 20px;
-}
-
+/* ============================================================
+   Footer
+   ============================================================ */
 footer {
-    background-color: #5d5031;
+    background-color: var(--text-primary);
     color: #ffffff;
     justify-content: center;
     align-items: center;
@@ -309,51 +465,36 @@ footer a {
     color: #ffffff;
 }
 
-::selection {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: rgb(255, 255, 255);
-}
-
-/* flexbox for gallery on gallery.html */
-#gallery {
+/* ============================================================
+   Grids & Cards
+   ============================================================ */
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
-    margin: 2rem 0;
-    background: #fffacc;
-    padding: 5rem;
+    margin: 2rem 1rem;
 }
 
-.gallery-item {
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: var(--dark-box);
-    border-radius: 8px;
+    border-radius: 20px;
     padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin: 1rem;
+    font-size: 1.5rem;
 }
 
-.gallery-item:hover {
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
-    background-color: var(--dark-box-hover);
+.item img:not(.inline-icon) {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
 }
 
-.gallery-item a:hover {
-    transform: none;
-    transition: none;
-}
-
-.gallery-item button {
-    color: #ffd5ae;
-    background-color: #aa815b;
-}
-
-.gallery-item button:hover {
-    color: #483422;
-}
-
-/* Mobile Media Queries Resizing*/
+/* ============================================================
+   Responsive — Mobile (max-width: 700px)
+   ============================================================ */
 @media (max-width: 700px) {
     .navbar {
         height: 3em;
@@ -400,35 +541,7 @@ footer a {
         padding-left: 2rem;
     }
 
-    h1 {
-        font-size: 3rem;
-    }
+    h1 { font-size: 3rem; }
 
-    #main-text {
-        font-size: 2rem;
-    }
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    margin: 2rem 1rem;
-}
-
-.item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: var(--dark-box);
-    border-radius: 8px;
-    padding: 1rem;
-    font-size: 1.5rem;
-}
-
-.item img {
-    width: 100%;
-    max-width: 220px;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+    #main-text { font-size: 2rem; }
 }

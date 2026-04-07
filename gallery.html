@@ -1,19 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta
-      charset="UTF-8"
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-
-    <title>Swirl</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swirl — Gallery</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="subpage.css" />
-
     <link rel="icon" type="image/x-icon" href="assets/png/sprinkles.png" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,60 +19,28 @@
     />
   </head>
 
-  <body
-    style="
-      background: #fffacc;
-      background: radial-gradient(
-        circle,
-        rgba(255, 250, 204, 1) 0%,
-        rgba(253, 247, 157, 1) 30%,
-        rgba(253, 224, 157, 1) 100%
-      );
-    "
-  >
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-    <script src="gallery.js"></script>
-    <script src="api.js"></script>
-
-    <!-- Navbar -->
+  <body>
     <nav class="navbar">
-      <!-- Hack Club Flag -->
-      <a class="banner" href="https://hackclub.com/"
-        ><img
-          style="
-            position: absolute;
-            top: 0;
-            left: 10px;
-            border: 0;
-            width: 128px;
-            z-index: 1000;
-          "
-          src="https://assets.hackclub.com/flag-orpheus-top.svg"
-          alt="Hack Club"
-      /></a>
-
+      <a class="banner" href="https://hackclub.com/">
+        <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club" />
+      </a>
       <div class="navbar__container">
         <ul class="navbar__menu">
           <li class="navbar__item">
             <a href="index.html" class="navbar__links">Home</a>
           </li>
-
           <li class="navbar__item">
             <a href="requirements.html" class="navbar__links">Requirements</a>
           </li>
-
           <li class="navbar__item">
-            <a href="./gallery.html" class="navbar__links">Gallery</a>
+            <a href="gallery.html" class="navbar__links">Gallery</a>
           </li>
-
           <li class="navbar__item">
             <a href="resources.html" class="navbar__links">Resources</a>
           </li>
-
-          <li class="navbar__btn">
+          <li class="navbar__submit-item">
             <a
               href="https://forms.hackclub.com/swirl"
-              style="padding: 0.25rem"
               class="navbar__btn"
               >Submit</a
             >
@@ -88,81 +49,59 @@
       </div>
     </nav>
 
-    <br />
-
-    <div class="subpage__logo">
-      <h1 id="circle_sub">
-        <br />
-        <img
-          id="swirlText"
-          src="assets/svg/swirl-text.svg"
-          alt="Swirl! Text Logo"
-          style="
-            background: none;
-            width: 300px;
-            height: 350px;
-            margin-bottom: -150px;
-          "
-        />
-        <br />
-      </h1>
-      <h1 id="circle2_sub" style="width: 12.5rem">
-        <div class="rotate_sub">Gallery</div>
-      </h1>
-    </div>
-
-    <br />
-
-    <h2>Awesome Projects!</h2>
-
-    <br /><br /><br /><br /><br />
-    <br />
-    <center>
-      <div
-        class="main-content"
-        style="
-          background: var(--box-hover);
-          border-radius: 20px;
-          padding: 20px;
-          border: 10px solid #7a725e;
-          border-right-color: transparent;
-          border-left-color: transparent;
-        "
-      >
-        <h3>
+    <main>
+      <div class="subpage__logo">
+        <h1 id="circle_sub">
           <br />
-          Swirl currently has
-          <span id="swirl-ships" style="color: rgba(148, 112, 62, 1)"
-            >Loading API...</span
-          >
-          submissions in the YSWS Database!
-        </h3>
-
-        <br />
-        <h3>
-          When approved, projects will appear in
-          <a
-            href="https://hackclub.slack.com/archives/C08LTREU8KF"
-            target="_blank"
-            style="color: rgba(148, 112, 62, 1)"
-            >#swirl-ships</a
-          >
-        </h3>
-        <br /><br />
-
-        <h2>Submit a project to see it below 👀</h2>
+          <img
+            id="swirlText"
+            src="assets/svg/swirl-text.svg"
+            alt="Swirl! Text Logo"
+          />
+          <br />
+        </h1>
+        <h1 id="circle2_sub" style="width: 12.5rem">
+          <div class="rotate_sub">Gallery</div>
+        </h1>
       </div>
-    </center>
 
-    <div id="gallery" style="background: var(--background-alt); padding: 5rem">
-      <!-- Projects go here from data.yml loaded through gallery.js --->
-    </div>
+      <br />
 
-    <!-- Sprinkles to go here :) -->
+      <h2>Awesome Projects!</h2>
+
+      <br /><br /><br /><br /><br /><br /><br />
+      <div class="text-center">
+        <div class="main-content gallery-info">
+          <h3>
+            <br />
+            Swirl currently has
+            <span id="swirl-ships">Loading API...</span>
+            submissions in the YSWS Database!
+          </h3>
+
+          <br />
+          <h3>
+            When approved, projects will appear in
+            <a
+              href="https://hackclub.slack.com/archives/C08LTREU8KF"
+              target="_blank"
+              style="color: var(--accent-warm)"
+              >#swirl-ships</a
+            >
+          </h3>
+          <br /><br />
+
+          <h2>Submit a project to see it below 👀</h2>
+        </div>
+      </div>
+
+      <div id="gallery">
+        <!-- Projects loaded dynamically from data.yaml via gallery.js -->
+      </div>
 
     <br /><br /><br />
     <center>
-      <a target="_blank" href="https://forms.hackclub.com/swirl">
+      <a target="_blank" href="https://forms.hackclub.com/swirl" class="btn-link">
         <button style="color: #b875ff">Get your ice cream</button>
       </a>
     </center>
@@ -172,27 +111,19 @@
       <img
         src="assets/other/stickers/orphmoji-yippee.png"
         alt="Orpheus Yippee!"
-        style="
-          background: none;
-          width: 50px;
-          margin-bottom: 2px;
-          margin-right: 15px;
-        "
+        style="background: none; width: 50px; margin-bottom: 2px; margin-right: 15px"
       />
-      Built & maintained by dhyan for Hack Club
+      Built & maintained by &nbsp;
+      <a href="mailto:dhyan@hackclub.com" target="_blank"> dhyan </a> &nbsp; for
+      Hack Club
       <img
         src="assets/other/stickers/orphmoji-yippee.png"
         alt="Orpheus Yippee!"
-        style="
-          background: none;
-          width: 50px;
-          margin-bottom: 2px;
-          margin-left: 20px;
-        "
+        style="background: none; width: 50px; margin-bottom: 2px; margin-left: 20px"
       />
       <img
         src="assets/svg/cherry.svg"
-        alt="Orpheus Yippee!"
+        alt="Cherry decoration"
         style="
           background: none;
           height: 50px;
@@ -204,5 +135,9 @@
       />
       <br /><br /><br />
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="gallery.js"></script>
+    <script src="api.js"></script>
   </body>
 </html>

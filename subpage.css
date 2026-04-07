@@ -1,29 +1,17 @@
-/* swirl background */
-* {
-    z-index: 10;
-}
+/* Subpage-specific styles (gallery, resources, requirements, 404) */
 
-#circle {
-    height: 38rem;
-    width: 55rem;
-    background-color: var(--navbar-bg);
-    border-radius: 50%;
-    position: sticky;
-    margin-top: -18.75rem;
-}
-
+/* ============================================================
+   Subpage Hero Circles
+   ============================================================ */
 #circle_sub {
     height: 25rem;
     width: 31rem;
-    background-color: #b875ff;
+    background-color: var(--navbar-bg);
     border-radius: 50%;
     position: sticky;
     float: right;
     margin-top: -12rem;
     margin-right: -1rem;
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
     text-align: center;
     overflow: clip;
 }
@@ -31,16 +19,23 @@
 #circle2_sub {
     height: 12.5rem;
     width: 25rem;
-    background-color: #b875ff;
+    background-color: var(--navbar-bg);
     border-radius: 50%;
     position: sticky;
     float: right;
     margin-top: -5rem;
     margin-right: -4rem;
-    justify-content: center;
-    justify-items: center;
-    justify-self: center;
     text-align: center;
+}
+
+/* ============================================================
+   Subpage Logo & Animation
+   ============================================================ */
+#swirlText {
+    background: none;
+    width: 300px;
+    height: 350px;
+    margin-bottom: -150px;
 }
 
 #swirlText:hover {
@@ -48,12 +43,8 @@
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
 div.rotate_sub {
@@ -64,20 +55,25 @@ div.rotate_sub {
     color: white;
 }
 
+div.rotate_sub:hover {
+    color: var(--text-primary);
+    transition: color 0.5s;
+}
+
+/* ============================================================
+   Embedded Content
+   ============================================================ */
 iframe {
     width: 60%;
 }
 
-div.rotate_sub:hover {
-    color: #5d5031;
-    transition-duration: 0.5s;
-}
-
+/* ============================================================
+   Responsive — Mobile (max-width: 700px)
+   ============================================================ */
 @media (max-width: 700px) {
     #circle2_sub {
         height: 12rem;
         width: 15rem;
-        padding-left: -5rem;
         margin-bottom: -1rem;
         margin-top: -11rem;
         margin-right: 5rem;

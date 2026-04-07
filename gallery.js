@@ -1,6 +1,5 @@
-const IMAGE_HOST = 'https://hackclub.com';
 const FALLBACK_IMAGES = [
-    //ADD FALLBACK IMAGES HERE!
+    // Add more fallback screenshots here if needed
     'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/b62df713cb00bdfe9d2d3910319da7babce118af_waffle.png',
     'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/a4cdda8aaa878c3d4f4cfce1e641843a93a7b940_img_0769.png',
     'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/0f50a9029a506bb376d6cefaff3549a441cd9a4b_chatgpt-swirl.png',
@@ -12,75 +11,89 @@ const FALLBACK_IMAGES = [
     'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/c34a3834cf6e419da4cfc2147b2bf370e86c3e95_alb-swirl.png',
 ];
 
+/** Resolves a screenshot field value (string, array, or object) to an absolute URL. */
+function resolveScreenshotUrl(screenshotField) {
+    if (!screenshotField) return null;
+
+    if (Array.isArray(screenshotField)) {
+        const first = screenshotField[0];
+        return first?.url ?? first ?? null;
+    }
+
+    if (typeof screenshotField === 'object') {
+        return screenshotField.url ?? null;
+    }
+
+    return screenshotField; // already a string URL
+}
+
+/** Returns a random image URL from FALLBACK_IMAGES. */
+function randomFallbackImage() {
+    return FALLBACK_IMAGES[Math.floor(Math.random() * FALLBACK_IMAGES.length)];
+}
+
+/** Creates and returns a gallery card element for a single submission record. */
+function createGalleryItem(fields) {
+    const username = fields['GitHub Username'] || 'Untitled Project';
+    const demoUrl = fields['Playable URL'] || '#';
+    const sourceUrl = fields['Code URL'] || '#';
+    const screenshotUrl = resolveScreenshotUrl(fields['Screenshot']);
+    const fallback = randomFallbackImage();
+
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+
+    const title = document.createElement('h2');
+    title.className = 'gallery-item__title';
+    title.textContent = username;
+
+    const img = document.createElement('img');
+    img.className = 'gallery-item__img';
+    img.src = screenshotUrl ?? fallback;
+    img.alt = `Screenshot of ${username}'s project`;
+    img.onerror = function () {
+        this.onerror = null;
+        this.src = fallback;
+    };
+
+    const actions = document.createElement('div');
+    actions.className = 'gallery-item__actions';
+
+    const demoLink = document.createElement('a');
+    demoLink.href = demoUrl;
+    demoLink.target = '_blank';
+    const demoBtn = document.createElement('button');
+    demoBtn.textContent = 'Demo';
+    demoLink.appendChild(demoBtn);
+
+    const sourceLink = document.createElement('a');
+    sourceLink.href = sourceUrl;
+    sourceLink.target = '_blank';
+    const sourceBtn = document.createElement('button');
+    sourceBtn.textContent = 'Source';
+    sourceLink.appendChild(sourceBtn);
+
+    actions.appendChild(demoLink);
+    actions.appendChild(sourceLink);
+
+    item.appendChild(title);
+    item.appendChild(img);
+    item.appendChild(actions);
+
+    return item;
+}
+
 fetch('/data.yaml')
     .then((response) => response.text())
     .then((yamlText) => {
         const data = jsyaml.load(yamlText);
         const gallery = document.getElementById('gallery');
         gallery.innerHTML = '';
-
-        data.records.forEach((record, idx) => {
-            const fields = record.fields;
-            const ghUser = fields['GitHub Username'] || 'Untitled Project';
-            const demoUrl = fields['Playable URL'] || '#';
-            const sourceUrl = fields['Code URL'] || '#';
-
-            let screenshot =
-                IMAGE_HOST + '/images/assets/png/sprinkles_goof.png';
-            if (fields['Screenshot']) {
-                if (Array.isArray(fields['Screenshot'])) {
-                    if (fields['Screenshot'][0]) {
-                        screenshot =
-                            fields['Screenshot'][0].url ||
-                            fields['Screenshot'][0];
-                    }
-                } else if (
-                    typeof fields['Screenshot'] === 'object' &&
-                    fields['Screenshot'].url
-                ) {
-                    screenshot = fields['Screenshot'].url;
-                } else if (typeof fields['Screenshot'] === 'string') {
-                    screenshot = fields['Screenshot'];
-                }
-            }
-
-            // Prepend IMAGE_HOST if not absolute
-            if (screenshot && !/^https?:\/\//.test(screenshot)) {
-                screenshot =
-                    IMAGE_HOST +
-                    (screenshot.startsWith('/') ? '' : '/') +
-                    screenshot;
-            }
-
-            // Falback img randomizer
-            const randomFallback =
-                FALLBACK_IMAGES[
-                    Math.floor(Math.random() * FALLBACK_IMAGES.length)
-                ];
-
-            const imgId = `gallery-img-${idx}`;
-            const item = document.createElement('div');
-            item.className = 'gallery-item';
-            item.innerHTML = `
-                <h2 style="font-size: 100%">${ghUser}</h2>
-                <img id="${imgId}" src="${screenshot}" alt="Screenshot"
-                    style="width: 10rem; height: 10rem; border-radius: 20%; margin-top: 1rem; margin-bottom: 1rem;">
-                <br>
-                <a href="${demoUrl}" target="_blank"><button style="padding: 1rem;">Demo</button></a>
-                <a href="${sourceUrl}" target="_blank"><button style="padding: 1rem;">Source</button></a>
-            `;
-            gallery.appendChild(item);
-
-            // custom onerror handler attachment to randomize fallback imgs
-            const img = document.getElementById(imgId);
-            img.onerror = function () {
-                this.onerror = null;
-                this.src = randomFallback;
-            };
+        data.records.forEach((record) => {
+            gallery.appendChild(createGalleryItem(record.fields));
         });
     })
     .catch((err) => {
-        document.getElementById('gallery').innerHTML =
-            '<p>Failed to load gallery.</p>';
+        document.getElementById('gallery').innerHTML = '<p>Failed to load gallery.</p>';
         console.error(err);
     });
