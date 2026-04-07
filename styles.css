@@ -26,16 +26,25 @@ h4,
 h5,
 h6,
 p,
-li,
-footer {
+li{
     margin-left: 1.5em;
     margin-right: 2.5em;
+}
+
+a, button {
+    cursor: pointer;
 }
 
 .preahvihear-regular {
     font-family: 'Preahvihear', sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+html, body {
+    /* the x scroll is caused by the swirl logo that's always underneath the navbar at the right of the screen */
+    /* this will just keep the scroll hidden since there isn't actually real content to scroll for */
+    overflow-x: hidden;
 }
 
 /*
@@ -293,6 +302,7 @@ footer {
     display: flex;
     width: 100%;
     position: relative;
+    margin-left: 0;
 }
 
 footer a {
