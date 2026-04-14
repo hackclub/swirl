@@ -1,0 +1,33 @@
+name: update ships data from unified
+
+on:
+  schedule:
+    # runs at the start of every hour
+    - cron: '0 * * * *'
+  workflow_dispatch: # allow running it manually for testing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Execute script
+        run: python refresh_data.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "automated hourly swirl data update" || exit 0
+          git push

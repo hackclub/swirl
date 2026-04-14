@@ -11,6 +11,18 @@ const FALLBACK_IMAGES = [
     'https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/c34a3834cf6e419da4cfc2147b2bf370e86c3e95_alb-swirl.png',
 ];
 
+const hourCountToScoopCount = (hourCount) => {
+    switch (hourCount) {
+        case 1:
+            return 1;
+        case 1.5:
+            return 2;
+        case 2:
+            return 3;
+    }
+    return undefined;
+};
+
 /** Resolves a screenshot field value (string, array, or object) to an absolute URL. */
 function resolveScreenshotUrl(screenshotField) {
     if (!screenshotField) return null;
@@ -38,6 +50,7 @@ function createGalleryItem(fields) {
     const demoUrl = fields['Playable URL'] || '#';
     const sourceUrl = fields['Code URL'] || '#';
     const screenshotUrl = resolveScreenshotUrl(fields['Screenshot']);
+    const hourCount = fields['Hours Spent'] || 'N/A';
     const fallback = randomFallbackImage();
 
     const item = document.createElement('div');
@@ -55,6 +68,36 @@ function createGalleryItem(fields) {
         this.onerror = null;
         this.src = fallback;
     };
+
+    const scoops = hourCountToScoopCount(hourCount);
+
+    const scoopsCountContainer = document.createElement('div');
+    if (scoops !== undefined) {
+        scoopsCountContainer.style.display = 'flex';
+        scoopsCountContainer.style.alignItems = 'center';
+        scoopsCountContainer.style.justifyContent = 'center';
+        scoopsCountContainer.style.marginBottom = '8px';
+        scoopsCountContainer.style.flexDirection = 'row';
+        scoopsCountContainer.style.width = '100%';
+
+        const scoopsCount = document.createElement('span');
+        scoopsCount.textContent = scoops;
+        scoopsCount.style.fontSize = '20px';
+        scoopsCount.style.color = '#555';
+        scoopsCount.style.marginRight = '4px';
+
+        const scoopsImage = document.createElement('img');
+        scoopsImage.className = 'gallery-item__scoops_img';
+        scoopsImage.src =
+            'https://emoji.slack-edge.com/T09V59WQY1E/swirl/c5e54c041443a5ed.png';
+        scoopsImage.alt = 'Scoops';
+        scoopsImage.style.width = '28px';
+
+        scoopsCountContainer.appendChild(scoopsCount);
+        scoopsCountContainer.appendChild(scoopsImage);
+    } else {
+        scoopsCountContainer.style.height = '32px'; // reserve space for missing scoop count
+    }
 
     const actions = document.createElement('div');
     actions.className = 'gallery-item__actions';
@@ -78,22 +121,23 @@ function createGalleryItem(fields) {
 
     item.appendChild(title);
     item.appendChild(img);
+    item.appendChild(scoopsCountContainer);
     item.appendChild(actions);
 
     return item;
 }
 
-fetch('/data.yaml')
-    .then((response) => response.text())
-    .then((yamlText) => {
-        const data = jsyaml.load(yamlText);
+fetch('/data.json')
+    .then((response) => response.json())
+    .then((data) => {
         const gallery = document.getElementById('gallery');
         gallery.innerHTML = '';
-        data.records.forEach((record) => {
+        data.forEach((record) => {
             gallery.appendChild(createGalleryItem(record.fields));
         });
     })
     .catch((err) => {
-        document.getElementById('gallery').innerHTML = '<p>Failed to load gallery.</p>';
+        document.getElementById('gallery').innerHTML =
+            '<p>Failed to load gallery.</p>';
         console.error(err);
     });
