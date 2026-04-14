@@ -84,7 +84,7 @@ function createGalleryItem(fields) {
         scoopsCount.textContent = scoops;
         scoopsCount.style.fontSize = '20px';
         scoopsCount.style.color = '#555';
-        scoopsCount.style.marginRight = '4px';
+        scoopsCount.style.marginLeft = '4px';
 
         const scoopsImage = document.createElement('img');
         scoopsImage.className = 'gallery-item__scoops_img';
@@ -93,8 +93,8 @@ function createGalleryItem(fields) {
         scoopsImage.alt = 'Scoops';
         scoopsImage.style.width = '28px';
 
-        scoopsCountContainer.appendChild(scoopsCount);
         scoopsCountContainer.appendChild(scoopsImage);
+        scoopsCountContainer.appendChild(scoopsCount);
     } else {
         scoopsCountContainer.style.height = '32px'; // reserve space for missing scoop count
     }

@@ -28,4 +28,4 @@ for ship in data:
 
 print(f"Final list has {len(ships)} ships")
 with open("data.json", "w") as f:
-    json.dump(ships, f, indent=4)
+    json.dump(ships, f, separators=(',', ':'))
