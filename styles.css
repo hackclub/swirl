@@ -72,10 +72,13 @@ h4,
 h5,
 h6,
 p,
-li,
-footer {
+li{
     margin-left: 1.5em;
     margin-right: 2.5em;
+}
+
+a, button {
+    cursor: pointer;
 }
 
 h1 { font-size: 3.25rem; }
@@ -95,6 +98,11 @@ hr {
     border-width: 10px;
 }
 
+html, body {
+    /* the x scroll is caused by the swirl logo that's always underneath the navbar at the right of the screen */
+    /* this will just keep the scroll hidden since there isn't actually real content to scroll for */
+    overflow-x: hidden;
+}
 ::selection {
     background-color: rgba(0, 0, 0, 0.8);
     color: #ffffff;
@@ -112,6 +120,7 @@ hr {
     font-weight: 400;
     font-style: normal;
 }
+
 
 .inline-icon {
     background: none;
@@ -472,6 +481,7 @@ footer {
     display: flex;
     width: 100%;
     position: relative;
+    margin-left: 0;
 }
 
 footer a {
