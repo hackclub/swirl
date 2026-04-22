@@ -20,6 +20,7 @@
 
   <body>
     <nav class="navbar">
+    <button class="dark-mode-button" id="dark-mode-toggle">Dark</button>
       <a class="banner" href="https://hackclub.com/">
         <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club" />
       </a>
@@ -301,5 +302,21 @@
       />
       <br /><br /><br />
     </footer>
+    <script src="gallery.js"></script>
+  <script>
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const body = document.body;
+    const currentTheme = localStorage.getItem("theme") || "light";
+    if (currentTheme === "dark") {
+      body.classList.add("dark-mode");
+      darkModeToggle.textContent = "Light";
+    }
+    darkModeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      const theme = body.classList.contains("dark-mode") ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+      darkModeToggle.textContent = theme === "dark" ? "Light" : "Dark";
+    });
+  </script>
   </body>
 </html>

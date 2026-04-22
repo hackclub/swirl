@@ -29,6 +29,21 @@
     --chocolate-shadow: #c4845a;
 }
 
+body.dark-mode {
+  background: #1a1a1a;
+  --text-primary: #ffffff;
+  --accent-warm: #faffb3;
+}
+
+body.dark-mode .main-content,
+body.dark-mode .gallery-info,
+body.dark-mode .gallery-item,
+body.dark-mode footer {
+  background: #1a1a1a;
+  background-image: none;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 /* ============================================================
    Base Styles
    ============================================================ */
@@ -299,6 +314,14 @@ button:hover {
     transform: translateY(2px);
     box-shadow: 0 2px 0 var(--strawberry-dark);
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+}
+
+.dark-mode-button {
+    color: #282c33;
+    background: var(--navbar-bg);
+    position: absolute;
+    top: 0px;
+    right: 1100px;
 }
 
 /* ============================================================
