@@ -32,6 +32,7 @@
 body.dark-mode {
   background: #1a1a1a;
   --text-primary: #ffffff;
+  --accent-warm: #faffb3;
 }
 
 body.dark-mode .main-content,
