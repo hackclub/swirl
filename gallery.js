@@ -34,10 +34,11 @@ function randomFallbackImage() {
 
 /** Creates and returns a gallery card element for a single submission record. */
 function createGalleryItem(fields) {
-    const username = fields['GitHub Username'] || 'Untitled Project';
-    const demoUrl = fields['Playable URL'] || '#';
-    const sourceUrl = fields['Code URL'] || '#';
-    const screenshotUrl = resolveScreenshotUrl(fields['Screenshot']);
+    const username = fields['github_username'] || 'Untitled Project';
+    const demoUrl = fields['playable_url'] || '#';
+    const sourceUrl = fields['code_url'] || '#';
+    const screenshotUrl = resolveScreenshotUrl(fields['screenshot_url']);
+    const scoopCount = fields['scoops_count'] || 'N/A';
     const fallback = randomFallbackImage();
 
     const item = document.createElement('div');
@@ -55,6 +56,34 @@ function createGalleryItem(fields) {
         this.onerror = null;
         this.src = fallback;
     };
+
+    const scoopsCountContainer = document.createElement('div');
+    if (scoopCount !== undefined) {
+        scoopsCountContainer.style.display = 'flex';
+        scoopsCountContainer.style.alignItems = 'center';
+        scoopsCountContainer.style.justifyContent = 'center';
+        scoopsCountContainer.style.marginBottom = '8px';
+        scoopsCountContainer.style.flexDirection = 'row';
+        scoopsCountContainer.style.width = '100%';
+
+        const scoopsCount = document.createElement('span');
+        scoopsCount.textContent = scoopCount;
+        scoopsCount.style.fontSize = '20px';
+        scoopsCount.style.color = '#555';
+        scoopsCount.style.marginLeft = '4px';
+
+        const scoopsImage = document.createElement('img');
+        scoopsImage.className = 'gallery-item__scoops_img';
+        scoopsImage.src =
+            'https://emoji.slack-edge.com/T09V59WQY1E/swirl/c5e54c041443a5ed.png';
+        scoopsImage.alt = 'Scoops';
+        scoopsImage.style.width = '28px';
+
+        scoopsCountContainer.appendChild(scoopsImage);
+        scoopsCountContainer.appendChild(scoopsCount);
+    } else {
+        scoopsCountContainer.style.height = '32px'; // reserve space for missing scoop count
+    }
 
     const actions = document.createElement('div');
     actions.className = 'gallery-item__actions';
@@ -78,22 +107,26 @@ function createGalleryItem(fields) {
 
     item.appendChild(title);
     item.appendChild(img);
+    item.appendChild(scoopsCountContainer);
     item.appendChild(actions);
 
     return item;
 }
 
-fetch('/data.yaml')
-    .then((response) => response.text())
-    .then((yamlText) => {
-        const data = jsyaml.load(yamlText);
+fetch('/data.json')
+    .then((response) => response.json())
+    .then((data) => {
         const gallery = document.getElementById('gallery');
         gallery.innerHTML = '';
-        data.records.forEach((record) => {
-            gallery.appendChild(createGalleryItem(record.fields));
+        document.getElementById('swirl-ships').textContent =
+            Object.keys(data).length;
+        Object.keys(data).forEach((key) => {
+            const record = data[key];
+            gallery.appendChild(createGalleryItem(record));
         });
     })
     .catch((err) => {
-        document.getElementById('gallery').innerHTML = '<p>Failed to load gallery.</p>';
+        document.getElementById('gallery').innerHTML =
+            '<p>Failed to load gallery.</p>';
         console.error(err);
     });
