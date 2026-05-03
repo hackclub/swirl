@@ -1,0 +1,42 @@
+name: update ships data from unified
+
+on:
+  schedule:
+    # runs once a day at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      AIRTABLE_PAT: ${{ secrets.AIRTABLE_PAT }}
+      SWIRL_BASE_ID: ${{ secrets.SWIRL_BASE_ID }}
+      SWIRL_TABLE_ID: ${{ secrets.SWIRL_TABLE_ID }}
+      CDN_BASE_URL: ${{ secrets.CDN_BASE_URL }}
+      CDN_API_KEY: ${{ secrets.CDN_API_KEY }}
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+
+      - name: Install dependencies
+        run: |
+          if [ -f go.mod ]; then
+            go mod download
+          fi
+
+      - name: Execute script
+        run: go run refresh_data.go
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          git commit -m "automated daily swirl data update" || exit 0
+          git push
