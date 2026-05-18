@@ -157,11 +157,6 @@ func main() {
 	}
 	fmt.Printf("got %d submissions from data.json\n", len(submissions))
 
-	if len(submissions) == len(records) {
-		fmt.Println("no new records to add to submissions")
-		return
-	}
-
 	// steps:
 	// 1. find records that are not in submissions
 	// 2. for each of those records, convert the airtable screenshot to a cdn url and add to submissions
@@ -171,7 +166,7 @@ func main() {
 		if record.Fields.ReviewStatus != "Approved" {
 			continue
 		}
-		if len(record.Fields.Screenshot) == 0 { // dw about nil bc len(nil) is 0
+		if len(record.Fields.Screenshot) == 0 {
 			continue
 		}
 		if _, ok := submissions[record.ID]; ok {

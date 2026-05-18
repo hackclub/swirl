@@ -254,6 +254,52 @@ html, body {
     margin-right: auto;
 }
 
+.leader-zone {
+    color: white;
+    transition: transform 0.5s ease, color 0.5s ease;
+    transform: scale(1);
+}
+
+.leader-zone:hover {
+    transform: scale(1.41);
+    color: var(--text-primary);
+}
+
+.leader-zone-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.leader-zone-step {
+    background: var(--background);
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.leader-zone-step-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.leader-zone-step-number {
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 2rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--navbar-bg);
+    border-radius: 999px;
+    margin: 0;
+}
+
 div.rotate {
     transform: rotate(-25deg);
     margin-top: 20px;
