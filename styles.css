@@ -287,7 +287,7 @@ html, body {
 }
 
 .leader-zone-step-number {
-    font-size: 3rem;
+    font-size: 2.67rem;
     font-weight: bold;
     padding: 2rem;
     width: 0.5rem;
@@ -296,6 +296,7 @@ html, body {
     align-items: center;
     justify-content: center;
     background-color: var(--navbar-bg);
+    color: white;
     border-radius: 999px;
     margin: 0;
 }
