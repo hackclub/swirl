@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Swirl — Gallery</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="subpage.css" />
-    <link rel="icon" type="image/x-icon" href="assets/png/sprinkles.png" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/subpage.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/png/sprinkles.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,7 +27,7 @@
       <div class="navbar__container">
         <ul class="navbar__menu">
           <li class="navbar__item">
-            <a href="index.html" class="navbar__links">Home</a>
+            <a href="../index.html" class="navbar__links">Home</a>
           </li>
           <li class="navbar__item">
             <a href="leader-zone.html" class="navbar__links">Leader Zone</a>
@@ -58,7 +58,7 @@
           <br />
           <img
             id="swirlText"
-            src="assets/svg/swirl-text.svg"
+            src="../assets/svg/swirl-text.svg"
             alt="Swirl! Text Logo"
           />
           <br />
@@ -72,47 +72,50 @@
 
       <h2>Awesome Projects!</h2>
 
-      <br /><br /><br /><br /><br /><br /><br />
-      <div class="text-center">
-        <div class="main-content gallery-info">
-          <h3>
-            <br />
-            Swirl currently has
-            <span id="swirl-ships">Loading API...</span>
-            submissions! 
-          </h3>
+      <br />
 
-          <br />
-          <h3>
-            When approved, projects will appear in
-            <a
-              href="https://hackclub.slack.com/archives/C08LTREU8KF"
-              target="_blank"
-              style="color: var(--accent-warm)"
-              >#swirl-ships</a
-            >
-          </h3>
-          <br /><br />
-
-          <h2>Submit a project to see it below 👀</h2>
-        </div>
+      <div class="main-content text-center">
+        <br />
+        <h3>
+          Swirl currently has
+          <span id="swirl-ships">Loading API...</span>
+          submissions!
+        </h3>
+        <br />
+        <h3>
+          When approved, projects will appear in
+          <a
+            href="https://hackclub.slack.com/archives/C08LTREU8KF"
+            target="_blank"
+            style="color: var(--accent-warm)"
+            >#swirl-ships</a
+          >
+        </h3>
+        <br />
+        <h2>Submit a project to see it below 👀</h2>
+        <br />
       </div>
 
-      <div id="gallery">
-        <!-- Projects loaded dynamically from data.yaml via gallery.js -->
+      <br />
+
+      <div class="main-content">
+        <div id="gallery">
+          <!-- Projects loaded dynamically from data.json via gallery.js -->
+        </div>
+        <div id="gallery-pagination" class="gallery-pagination"></div>
       </div>
 
     <br /><br /><br />
     <center>
       <a target="_blank" href="https://forms.hackclub.com/swirl" class="btn-link">
-        <button style="color: #b875ff">Get your ice cream</button>
+        <button>Get your ice cream</button>
       </a>
     </center>
     <br /><br /><br />
     <footer>
       <br />
       <img
-        src="assets/other/stickers/orphmoji-yippee.png"
+        src="../assets/other/stickers/orphmoji-yippee.png"
         alt="Orpheus Yippee!"
         style="background: none; width: 50px; margin-bottom: 2px; margin-right: 15px"
       />
@@ -120,12 +123,12 @@
       <a href="mailto:dhyan@hackclub.com" target="_blank"> dhyan </a> &nbsp; for
       Hack Club
       <img
-        src="assets/other/stickers/orphmoji-yippee.png"
+        src="../assets/other/stickers/orphmoji-yippee.png"
         alt="Orpheus Yippee!"
         style="background: none; width: 50px; margin-bottom: 2px; margin-left: 20px"
       />
       <img
-        src="assets/svg/cherry.svg"
+        src="../assets/svg/cherry.svg"
         alt="Cherry decoration"
         style="
           background: none;
@@ -140,6 +143,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
-    <script src="gallery.js"></script>
+    <script src="../js/gallery.js"></script>
   </body>
 </html>

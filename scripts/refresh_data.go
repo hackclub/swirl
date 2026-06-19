@@ -115,7 +115,7 @@ func AirtableScreenshotToCDN(link string) (string, error) {
 }
 
 func loadSubmissions() (Submissions, error) {
-	data, err := os.ReadFile("data.json")
+	data, err := os.ReadFile("data/data.json")
 	if err != nil {
 		fmt.Printf("load data.json: %v, starting with empty submissions\n", err)
 		return make(Submissions), nil
@@ -135,7 +135,7 @@ func saveSubmissions(submissions Submissions) error {
 		return fmt.Errorf("marshal: %w", err)
 	}
 
-	if err := os.WriteFile("data.json", data, 0644); err != nil {
+	if err := os.WriteFile("data/data.json", data, 0644); err != nil {
 		return fmt.Errorf("write file: %w", err)
 	}
 

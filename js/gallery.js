@@ -113,17 +113,62 @@ function createGalleryItem(fields) {
     return item;
 }
 
-fetch('/data.json')
+const PAGE_SIZE = 48;
+let allRecords = [];
+let currentPage = 1;
+
+function renderGalleryPage(page) {
+    currentPage = page;
+    const gallery = document.getElementById('gallery');
+    gallery.innerHTML = '';
+
+    const start = (page - 1) * PAGE_SIZE;
+    const pageRecords = allRecords.slice(start, start + PAGE_SIZE);
+
+    pageRecords.forEach((record) => {
+        gallery.appendChild(createGalleryItem(record));
+    });
+
+    renderPaginationControls();
+}
+
+function renderPaginationControls() {
+    const container = document.getElementById('gallery-pagination');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const totalPages = Math.ceil(allRecords.length / PAGE_SIZE);
+    if (totalPages <= 1) return;
+
+    const prevBtn = document.createElement('button');
+    prevBtn.textContent = '← Previous';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener('click', () => {
+        renderGalleryPage(currentPage - 1);
+        document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    container.appendChild(prevBtn);
+
+    const indicator = document.createElement('span');
+    indicator.textContent = `Page ${currentPage} of ${totalPages}`;
+    container.appendChild(indicator);
+
+    const nextBtn = document.createElement('button');
+    nextBtn.textContent = 'Next →';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener('click', () => {
+        renderGalleryPage(currentPage + 1);
+        document.getElementById('gallery').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    container.appendChild(nextBtn);
+}
+
+fetch('/data/data.json')
     .then((response) => response.json())
     .then((data) => {
-        const gallery = document.getElementById('gallery');
-        gallery.innerHTML = '';
-        document.getElementById('swirl-ships').textContent =
-            Object.keys(data).length;
-        Object.keys(data).forEach((key) => {
-            const record = data[key];
-            gallery.appendChild(createGalleryItem(record));
-        });
+        allRecords = Object.values(data);
+        document.getElementById('swirl-ships').textContent = allRecords.length;
+        renderGalleryPage(1);
     })
     .catch((err) => {
         document.getElementById('gallery').innerHTML =
