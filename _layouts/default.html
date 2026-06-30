@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"{% if page.html_attrs %} {{ page.html_attrs }}{% endif %}>
+<html lang="en" {% if page.html_attrs %} {{ page.html_attrs }}{% endif %}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,11 @@
     {%- if page.layout == "subpage" %}
     <link rel="stylesheet" href="{{ '/css/subpage.css' | relative_url }}" />
     {%- endif %}
-    <link rel="icon" type="image/x-icon" href="{{ '/assets/png/sprinkles.png' | relative_url }}" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ '/assets/png/sprinkles.png' | relative_url }}"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,9 +28,7 @@
   <body>
     {% include navbar.html %}
 
-    <main>
-      {{ content }}
-    </main>
+    <main>{{ content }}</main>
 
     {% include footer.html %}
   </body>
