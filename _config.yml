@@ -1,0 +1,17 @@
+title: Swirl
+description: Ship a website, get ice cream!
+url: https://swirl.hackclub.com
+baseurl: ""
+
+# Build settings
+encoding: UTF-8
+
+# Files/dirs that should not be copied into the built site
+exclude:
+  - README.md
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - .prettierrc
+  - vendor/
+  - .idea/

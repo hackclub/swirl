@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="subpage__logo">
+  <h1 id="circle_sub">
+    <br />
+    <img
+      id="swirlText"
+      src="{{ '/assets/svg/swirl-text.svg' | relative_url }}"
+      alt="Swirl! Text Logo"
+    />
+    <br />
+  </h1>
+  <h1 id="circle2_sub"{% if page.title_width %} style="width: {{ page.title_width }}"{% endif %}>
+    <div class="rotate_sub">{{ page.heading | default: page.title }}</div>
+  </h1>
+</div>
+
+<br />
+
+{{ content }}

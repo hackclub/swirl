@@ -257,29 +257,9 @@ html, body {
     margin-right: auto;
 }
 
-.leader-zone {
-    color: white;
-    transition: transform 0.5s ease, color 0.5s ease;
-    transform: scale(1);
-}
-
-.leader-zone:hover {
-    transform: scale(1.41);
-    color: var(--text-primary);
-}
-
-.leader-zone-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.leader-zone-step {
-    background: var(--background);
-    border-radius: 20px;
-    padding: 1rem;
-}
-
+/* ============================================================
+   Leader Zone steps (leader-zone.html)
+   ============================================================ */
 .leader-zone-step-title {
     display: flex;
     flex-direction: row;
@@ -302,6 +282,45 @@ html, body {
     color: white;
     border-radius: 999px;
     margin: 0;
+}
+
+.leader-zone-step-text {
+    margin: 0;
+    padding-left: 0;
+}
+
+.leader-zone-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 0 2.5em;
+    padding-left: 1.5em;
+    font-size: 1.1rem;
+}
+
+.leader-zone-list li {
+    margin: 0;
+    padding-left: 0.5rem;
+}
+
+.leader-zone-images {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0 2.5em 1rem 2.5em;
+}
+
+.leader-zone-images img {
+    width: 25%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.grant-option-desc {
+    color: var(--border-muted);
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0.25rem 0 0 0;
 }
 
 div.rotate {
@@ -331,24 +350,30 @@ div.rotate:hover {
 }
 
 /* ============================================================
-   Buttons — ice cream scoop style
+   Buttons — match navbar pill style
    ============================================================ */
 button {
     font-size: 1.25rem;
-    background: linear-gradient(160deg, var(--vanilla), var(--strawberry-hover));
-    border: 2px solid var(--strawberry);
-    border-radius: 999px; /* pill shape like a scoop */
+    background-color: lightskyblue;
+    border: 0;
+    border-radius: 1em;
+    color: white;
     margin-top: 20px;
-    padding: 0.4em 2em;
-    box-shadow: 0 4px 0 var(--strawberry-dark);
+    padding: 0.4em 1.5rem;
     cursor: pointer;
+    font-family: 'Preahvihear', sans-serif;
+    font-weight: 700;
 }
 
 button:hover {
-    background: linear-gradient(160deg, var(--strawberry-hover), var(--strawberry));
-    transform: translateY(2px);
-    box-shadow: 0 2px 0 var(--strawberry-dark);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+    color: black;
+    background-color: white;
+    transition: background-color 0.5s ease-in, color 0.5s ease-in;
+}
+
+button a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* ============================================================
@@ -382,38 +407,71 @@ div.list_indent {
    ============================================================ */
 #gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-    background: var(--background-alt);
-    padding: 5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 1rem;
 }
 
 #swirl-ships {
     color: var(--accent-warm);
 }
 
-.gallery-info {
-    background: linear-gradient(135deg, var(--box-hover), var(--strawberry-hover));
-    border-radius: 24px;
-    padding: 20px;
-    border: 10px solid var(--strawberry);
-    border-right-color: transparent;
-    border-left-color: transparent;
+.gallery-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.gallery-pagination span {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.gallery-pagination button {
+    margin-top: 0;
+    font-size: 1rem;
+    padding: 0.3em 1.2rem;
+}
+
+.gallery-pagination button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.gallery-pagination button:disabled:hover {
+    background-color: lightskyblue;
+    color: white;
+}
+
+@media (max-width: 1100px) {
+    #gallery { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 800px) {
+    #gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+    #gallery { grid-template-columns: 1fr; }
 }
 
 .gallery-item {
     background: var(--dark-box);
-    border-radius: 20px;
-    padding: 1rem;
+    border-radius: 16px;
+    padding: 0.6rem;
     box-shadow: 0 4px 0 var(--chocolate-shadow);
     text-align: center;
-    margin: 1rem;
     transition: transform 0.5s ease, background-color 0.5s ease;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .gallery-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
     background-color: var(--dark-box-hover);
 }
 
@@ -423,33 +481,32 @@ div.list_indent {
 }
 
 .gallery-item__title {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .gallery-item__img {
     width: 100%;
-    height: 10rem;
-    margin: 1rem 0;
+    height: 7rem;
+    margin: 0.5rem 0;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 .gallery-item__actions {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
 .gallery-item button {
-    color: var(--vanilla);
-    background: linear-gradient(160deg, #c4956a, #a06840);
-    border-color: var(--chocolate-shadow);
-    box-shadow: 0 4px 0 #7a4e2e;
-}
-
-.gallery-item button:hover {
-    background: linear-gradient(160deg, #d4a57a, #b07850);
-    color: var(--vanilla);
-    box-shadow: 0 2px 0 #7a4e2e;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    padding: 0.25em 0.8rem;
 }
 
 /* ============================================================
@@ -593,4 +650,17 @@ footer a {
     h1 { font-size: 3rem; }
 
     #main-text { font-size: 2rem; }
+
+    .leader-zone-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leader-zone-images img {
+        width: 80%;
+    }
+
+    .leader-zone-list {
+        margin: 0 1em;
+    }
 }

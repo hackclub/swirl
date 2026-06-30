@@ -1,0 +1,51 @@
+---
+layout: subpage
+title: Swirl — Gallery
+heading: Gallery
+title_width: 12.5rem
+---
+<h2>Awesome Projects!</h2>
+
+<br />
+
+<div class="main-content text-center">
+  <br />
+  <h3>
+    Swirl currently has
+    <span id="swirl-ships">Loading API...</span>
+    submissions!
+  </h3>
+  <br />
+  <h3>
+    When approved, projects will appear in
+    <a
+      href="https://hackclub.slack.com/archives/C08LTREU8KF"
+      target="_blank"
+      style="color: var(--accent-warm)"
+      >#swirl-ships</a
+    >
+  </h3>
+  <br />
+  <h2>Submit a project to see it below 👀</h2>
+  <br />
+</div>
+
+<br />
+
+<div class="main-content">
+  <div id="gallery">
+    <!-- Projects loaded dynamically from data.json via gallery.js -->
+  </div>
+  <div id="gallery-pagination" class="gallery-pagination"></div>
+</div>
+
+<br /><br /><br />
+<center>
+  <a target="_blank" href="https://forms.hackclub.com/swirl" class="btn-link">
+    <button>Get your ice cream</button>
+  </a>
+</center>
+<br /><br /><br />
+
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<script src="{{ '/js/gallery.js' | relative_url }}"></script>

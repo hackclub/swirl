@@ -34,12 +34,12 @@ jobs:
           fi
 
       - name: Execute script
-        run: go run refresh_data.go
+        run: go run scripts/refresh_data.go
 
       - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data.json
+          git add data/data.json
           git commit -m "automated daily swirl data update" || exit 0
           git push

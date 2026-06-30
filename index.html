@@ -1,308 +1,239 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swirl</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" type="image/x-icon" href="assets/png/sprinkles.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Preahvihear&display=swap"
-      rel="stylesheet"
+---
+layout: default
+title: Swirl
+---
+
+<br /><br /><br /><br /><br /><br />
+
+<div class="text-center">
+  <h1 id="circle">
+    <br />
+    <img
+      id="swirl-logo"
+      src="{{ '/assets/svg/swirl-text.svg' | relative_url }}"
+      alt="Swirl! Text Logo"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
+    <br />
+    <div class="rotate">Aka Boba Drops ii</div>
+  </h1>
+
+  <h1 id="main-text" style="text-align: center">
+    Build a Website<br />
+    Get Free Ice Cream!
+  </h1>
+  <p>Open for Workshop <b>and</b> Individual Submissions!</p>
+  <br />
+  <p style="font-size: 167%">
+    Are you a club leader? Check out the
+    <a
+      href="{{ '/pages/leader-zone.html' | relative_url }}"
+      style="color: #b875ff; font-weight: 700"
+    >
+      Leader Zone</a
+    >
+    to get started!
+  </p>
+</div>
+
+<div class="text-center">
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      gap: 2.2rem;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <a
+      target="_blank"
+      href="{{ '/pages/requirements.html' | relative_url }}"
+      class="btn-link"
+    >
+      <button>Requirements</button>
+    </a>
+
+    <a target="_blank" href="https://forms.hackclub.com/swirl" class="btn-link">
+      <button>Get your ice cream!</button>
+    </a>
+
+    <a
+      target="_blank"
+      href="https://forms.hackclub.com/swirl-workshop"
+      class="btn-link"
+    >
+      <button>Run a Club Meeting</button>
+    </a>
+  </div>
+  <br />
+  <br />
+
+  <br /><br /><br />
+  <h3>
+    <img
+      src="{{ '/assets/other/boba.png' | relative_url }}"
+      alt="Boba Drops Logo"
+      style="background: none; width: 50px; height: 50px; margin-bottom: -15px"
     />
-  </head>
+    Check out
+    <a target="_blank" href="https://hack.club/boba">Boba Drops</a> and the
+    other
+    <a href="https://webdev.hackclub.com/" target="_blank">web dev</a> ysws as
+    well!
+  </h3>
+</div>
 
-  <body>
-    <nav class="navbar">
-      <div class="banner">
-        <a href="https://hackclub.com/"><img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club" /></a>
-          <p>Sponsored by Jared</p>
-      </div>
-      <div class="navbar__container">
-        <ul class="navbar__menu">
-          <li class="navbar__item">
-            <a href="index.html" class="navbar__links">Home</a>
-          </li>
-          <li class="navbar__item">
-            <a href="leader-zone.html" class="navbar__links">Leader Zone</a>
-          </li>
-          <li class="navbar__item">
-            <a href="requirements.html" class="navbar__links">Requirements</a>
-          </li>
-          <li class="navbar__item">
-            <a href="gallery.html" class="navbar__links">Gallery</a>
-          </li>
-          <li class="navbar__item">
-            <a href="resources.html" class="navbar__links">Resources</a>
-          </li>
-          <li class="navbar__submit-item">
-            <a
-              href="https://forms.hackclub.com/swirl"
-              class="navbar__btn"
-              >Submit</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
+<br />
+<div class="main-content">
+  <h2>Who?</h2>
+  <p>
+    Swirl is open to all Hack Clubbers! All teenagers 18 and under, anywhere in
+    the world can participate!
+  </p>
 
-    <main>
-      <br /><br /><br /><br /><br /><br />
+  <br />
 
-      <div class="text-center">
-        <h1 id="circle">
-          <br />
-          <img
-            id="swirl-logo"
-            src="assets/svg/swirl-text.svg"
-            alt="Swirl! Text Logo"
-          />
-          <br />
-          <div class="rotate">Aka Boba Drops ii</div>
-        </h1>
+  <h2>What?</h2>
+  <p>
+    Swirl is the next step after the completion of Boba Drops! It's more
+    independent than Boba Drops, as it is all about <em>you</em> making your own
+    unique website! <br />It's your time to shine and push yourself further than
+    ever before — uniqueness is encouraged! <br />You will get a food grant
+    between $5 and $9 by shipping a project, dependent on how many features you
+    add! <br />See the requirements page for more information.
+  </p>
+  <br />
 
-      <h1 id="main-text" style="text-align: center">
-        Build a Website<br />
-        Get Free Ice Cream!
-      </h1>
-      <p>Open for Workshop <b>and</b> Individual Submissions!</p>
-      <br/>
-      <p style="font-size: 167%;">Are you a club leader? Check out the
-      <a href="leader-zone.html" style="color: #b875ff; font-weight: 700;">
-        Leader Zone</a> to get started!</p>
-    </center>
-    <!--
-<img src="images/assets/svg/swirl-1.svg" alt="swirl logo" style="background: none; width: 350px; height: 350px; margin-top: -1000px; margin-bottom: 100px; margin-left: 20px">
-<img src="images/assets/svg/swirl-1.svg" alt="swirl logo" style="background: none; width: 300px; height: 300px; margin-top: -1000px; position: absolute; float: right; margin-right: 300px">
--->
-    <center>
-      <div style="display: flex; flex-direction: row; gap: 2.2rem; justify-content: center; align-items: center;">
+  <h2>How?</h2>
+  <p>
+    <br />Cool features can be found all over the internet, it is encouraged for
+    you to do research on specific attributes you may want to add, just remember
+    to not copy-paste templates, and don't claim other's code as your own!
+    <br />There is a guide dedicated to Swirl and it is recommended that you
+    check it out!
+  </p>
+</div>
 
-        <a target="_blank" href="/requirements.html" class="btn-link">
-          <button style="color: #b875ff">Requirements</button>
-        </a>
+<br />
 
-        <a target="_blank" href="https://forms.hackclub.com/swirl" class="btn-link">
-          <button style="color: #b875ff">Get your ice cream!</button>
-        </a>
-        
-        <a
-        target="_blank"
-        href="https://forms.hackclub.com/swirl-workshop"
-        class="btn-link"
-        >
-        <button style="color: #b875ff">Run a Club Meeting</button>
+<div class="main-content">
+  <div class="text-center">
+    <h2>Inspiration</h2>
+    <br />
+    <h3>Check out these awesome websites!</h3>
+  </div>
+
+  <div class="grid">
+    <div class="item">
+      <img
+        src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/cd7005c64fed86f12b0a286ad6e604c1f256ee99_screenshot_2025-10-14_at_10.21.52___pm.png"
+        alt="dhyans.xyz"
+        style="background: none; width: 100%"
+      />
+      <a target="_blank" href="https://dhyans.xyz">My personal Website</a>
+      <br /><br /><br />
+      <a target="_blank" href="https://github.com/Bluelightning26/website"
+        >Github Repository
+        <img
+          src="{{ '/assets/other/stickers/github-sticker.png' | relative_url }}"
+          alt="GitHub Logo"
+          class="inline-icon"
+        />
       </a>
     </div>
-      <br />
-      <br />
 
-        <br /><br /><br />
-        <h3>
-          <img
-            src="assets/other/boba.png"
-            alt="Boba Drops Logo"
-            style="background: none; width: 50px; height: 50px; margin-bottom: -15px"
-          />
-          Check out
-          <a target="_blank" href="https://hack.club/boba">Boba Drops</a> and the
-          other
-          <a href="https://webdev.hackclub.com/" target="_blank">web dev</a> ysws
-          as well!
-        </h3>
-      </div>
-
-      <br />
-      <div class="main-content">
-        <h2>Who?</h2>
-        <p>
-          Swirl is open to all Hack Clubbers! All teenagers 18 and under, anywhere
-          in the world can participate!
-        </p>
-
-        <br />
-
-        <h2>What?</h2>
-        <p>
-          Swirl is the next step after the completion of Boba Drops! It's more
-          independent than Boba Drops, as it is all about <em>you</em> making
-          your own unique website! <br />It's your time to shine and push yourself
-          further than ever before — uniqueness is encouraged! <br />You will get a
-          food grant between $5 and $9 by shipping a project, dependent on how
-          many features you add! <br />See the requirements page for more
-          information.
-        </p>
-        <br />
-
-        <h2>How?</h2>
-        <p>
-          <br />Cool features can be found all over the internet, and it is
-          encouraged for you to do research on specific attributes you may want to
-          add, just remember to not copy-paste templates, and don't claim other's
-          code as your own! <br />There is a guide dedicated to Swirl and it is
-          recommended that you check it out!
-        </p>
-      </div>
-
-      <br />
-
-      <div class="main-content">
-        <div class="text-center">
-          <h2>Inspiration</h2>
-          <br />
-          <h3>Check out these awesome websites!</h3>
-        </div>
-
-        <div class="grid">
-          <div class="item">
-            <img
-              src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/cd7005c64fed86f12b0a286ad6e604c1f256ee99_screenshot_2025-10-14_at_10.21.52___pm.png"
-              alt="dhyans.xyz"
-              style="background: none; width: 100%"
-            />
-            <a target="_blank" href="https://dhyans.xyz">My personal Website</a>
-            <br /><br /><br />
-            <a target="_blank" href="https://github.com/Bluelightning26/website"
-              >Github Repository
-              <img
-                src="assets/other/stickers/github-sticker.png"
-                alt="GitHub Logo"
-                class="inline-icon"
-              />
-            </a>
-          </div>
-
-          <div class="item">
-            <img
-              src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/2ce5e9d8c49f60c6db915e3cde620b1378fd9fb0_screenshot_2025-10-14_at_10.26.04___pm.png"
-              alt="swirl: you are on this!"
-              style="background: none; width: 200%; height: 200%"
-            />
-            <a target="_blank" href="https://swirl.hackclub.com">
-              Swirl
-              <img
-                src="assets/svg/swirl-1.svg"
-                alt="swirl logo"
-                class="inline-icon"
-            /></a>
-            <br />You're on this website!<br /><br />
-            <a target="_blank" href="https://github.com/hackclub/Swirl"
-              >Github Repository
-              <img
-                src="assets/other/stickers/github-sticker.png"
-                alt="GitHub Logo"
-                class="inline-icon"
-              />
-            </a>
-          </div>
-
-          <div class="item">
-            <img
-              src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/d29f58d91db73da9fb21501b6cb3d4e79797ca50_screenshot_2025-10-14_at_10.22.29___pm.png"
-              alt="yessa's portfolio"
-              style="background: none; width: 100%"
-            />
-            <a target="_blank" href="https://portfolio-swirl.vercel.app/">
-              Yessa's Portfolio</a
-            >
-            <br /><br /><br />
-            <a target="_blank" href="https://github.com/Ayessaaa/portfolio-swirl"
-              >Github Repository
-              <img
-                src="assets/other/stickers/github-sticker.png"
-                alt="GitHub Logo"
-                class="inline-icon"
-              />
-            </a>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <h3>Check out the Gallery page to see more astounding submissions!</h3>
-          <br /><br />
-
-          <hr style="width: 100px; margin: 0 auto" />
-          <br /><br />
-          <h2>Questions? Comments? Need Help?</h2>
-          <br />
-          <h3>
-            Join
-            <a
-              target="_blank"
-              href="https://hackclub.slack.com/archives/C08FR0LMVHD"
-              >#swirl</a
-            >
-            on the Hack Club Slack!
-          </h3>
-          <p>
-            Or feel free to reach out to us directly!
-            <br />
-            <a href="mailto:dhyan@hackclub.com">dhyan@hackclub.com</a> or @<a
-              target="_blank"
-              href="https://hackclub.slack.com/team/U0824G9PTFE"
-              >dhyan</a
-            >
-            on Slack
-          </p>
-          <h2>
-            <br />
-            Now get out there and start Swirling!
-            <img
-              src="assets/other/icecreamparrot.gif"
-              alt="Ice Cream parrot"
-              class="inline-icon"
-            />
-            <br />
-          </h2>
-        </div>
-
-        <br />
-      </div>
-
-    <br /><br /><br />
-    <center>
-      <a target="_blank" href="https://forms.hackclub.com/swirl"
-        ><button style="color: #b875ff">Get your ice cream</button></a
-      >
-      <a target="_blank" href="https://hcb.hackclub.com/swirl">
-        <button style="color: #b875ff">View our finances</button>
+    <div class="item">
+      <img
+        src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/2ce5e9d8c49f60c6db915e3cde620b1378fd9fb0_screenshot_2025-10-14_at_10.26.04___pm.png"
+        alt="swirl: you are on this!"
+        style="background: none; width: 200%; height: 200%"
+      />
+      <a target="_blank" href="https://swirl.hackclub.com">
+        Swirl
+        <img
+          src="{{ '/assets/svg/swirl-1.svg' | relative_url }}"
+          alt="swirl logo"
+          class="inline-icon"
+      /></a>
+      <br />You're on this website!<br /><br />
+      <a target="_blank" href="https://github.com/hackclub/Swirl"
+        >Github Repository
+        <img
+          src="{{ '/assets/other/stickers/github-sticker.png' | relative_url }}"
+          alt="GitHub Logo"
+          class="inline-icon"
+        />
       </a>
-    </center>
-    <br /><br /><br />
-    <footer>
-      <br />
+    </div>
+
+    <div class="item">
       <img
-        src="assets/other/stickers/orphmoji-yippee.png"
-        alt="Orpheus Yippee!"
-        style="background: none; width: 50px; margin-bottom: 2px; margin-right: 15px"
+        src="https://cdn.hackclub.com/rescue?url=https://hc-cdn.hel1.your-objectstorage.com/s/v3/d29f58d91db73da9fb21501b6cb3d4e79797ca50_screenshot_2025-10-14_at_10.22.29___pm.png"
+        alt="yessa's portfolio"
+        style="background: none; width: 100%"
       />
-      Built & maintained by &nbsp;
-      <a href="mailto:dhyan@hackclub.com" target="_blank"> dhyan </a> &nbsp; for
-      Hack Club
-      <img
-        src="assets/other/stickers/orphmoji-yippee.png"
-        alt="Orpheus Yippee!"
-        style="background: none; width: 50px; margin-bottom: 2px; margin-left: 20px"
-      />
-      <img
-        src="assets/svg/cherry.svg"
-        alt="Cherry decoration"
-        style="
-          background: none;
-          height: 50px;
-          margin-bottom: 2px;
-          position: absolute;
-          right: 20px;
-          top: -49px;
-        "
-      />
+      <a target="_blank" href="https://portfolio-swirl.vercel.app/">
+        Yessa's Portfolio</a
+      >
       <br /><br /><br />
-    </footer>
-  </body>
-</html>
+      <a target="_blank" href="https://github.com/Ayessaaa/portfolio-swirl"
+        >Github Repository
+        <img
+          src="{{ '/assets/other/stickers/github-sticker.png' | relative_url }}"
+          alt="GitHub Logo"
+          class="inline-icon"
+        />
+      </a>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <h3>Check out the Gallery page to see more astounding submissions!</h3>
+    <br /><br />
+
+    <hr style="width: 100px; margin: 0 auto" />
+    <br /><br />
+    <h2>Questions? Comments? Need Help?</h2>
+    <br />
+    <h3>
+      Join
+      <a target="_blank" href="https://hackclub.slack.com/archives/C08FR0LMVHD"
+        >#swirl</a
+      >
+      on the Hack Club Slack!
+    </h3>
+    <p>
+      Or feel free to reach out to us directly!
+      <br />
+      <a href="mailto:dhyan@hackclub.com">dhyan@hackclub.com</a> or @<a
+        target="_blank"
+        href="https://hackclub.slack.com/team/U0824G9PTFE"
+        >dhyan</a
+      >
+      on Slack
+    </p>
+    <h2>
+      <br />
+      Now get out there and start Swirling!
+      <img
+        src="{{ '/assets/other/icecreamparrot.gif' | relative_url }}"
+        alt="Ice Cream parrot"
+        class="inline-icon"
+      />
+      <br />
+    </h2>
+  </div>
+
+  <br />
+</div>
+
+<br /><br /><br />
+<div class="text-center">
+  <a target="_blank" href="https://forms.hackclub.com/swirl"
+    ><button>Get your ice cream</button></a
+  >
+  <a target="_blank" href="https://hcb.hackclub.com/swirl">
+    <button>View our finances</button>
+  </a>
+</div>
+<br /><br /><br />

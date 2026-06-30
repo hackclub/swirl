@@ -1,0 +1,25 @@
+<nav class="navbar">
+      <div class="banner">
+        <a href="https://hackclub.com/"><img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club" /></a>
+          <p>Program by Jared</p>
+      </div>
+  <div class="navbar__container">
+    <ul class="navbar__menu">
+      {%- for link in site.data.nav.links %}
+      <li class="navbar__item">
+        <a
+          href="{{ link.url | relative_url }}"
+          class="navbar__links"
+          {%- if page.url == link.url %} aria-current="page"{% endif %}
+          >{{ link.title }}</a
+        >
+      </li>
+      {%- endfor %}
+      <li class="navbar__submit-item">
+        <a href="{{ site.data.nav.submit.url }}" class="navbar__btn"
+          >{{ site.data.nav.submit.title }}</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

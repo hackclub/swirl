@@ -1,0 +1,17 @@
+# Primary navigation — edit links here once and every page updates.
+links:
+  - title: Home
+    url: /
+  - title: Leader Zone
+    url: /pages/leader-zone.html
+  - title: Requirements
+    url: /pages/requirements.html
+  - title: Gallery
+    url: /pages/gallery.html
+  - title: Resources
+    url: /pages/resources.html
+
+# Call-to-action button on the right side of the navbar
+submit:
+  title: Submit
+  url: https://forms.hackclub.com/swirl
