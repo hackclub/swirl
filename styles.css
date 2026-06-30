@@ -127,7 +127,7 @@ html, body {
     padding: 0;
     margin: 0;
     background-color: var(--navbar-bg);
-    height: 5em;
+    height: 5.4em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,26 +210,29 @@ html, body {
 
 /* Hack Club flag banner (code from Hack Club brand website) */
 .banner {
-    top: -20px;
-    left: 10px;
-    z-index: 1001;
-}
-
-.banner img {
     position: absolute;
     top: 0;
     left: 10px;
     border: 0;
-    width: 128px;
-    z-index: 1000;
 }
 
-.banner:hover img {
-    animation: wave-flag 0.5s linear infinite alternate;
+.banner > a > img {
+    width: 128px;
+}
+.banner > p {
+    margin: 0;
+    margin-top: -12px;
+    color: var(--nav-text);
+    font-size: 1.1rem;
+    text-shadow: 0.6px 0.6px 1.2px lightskyblue;
+}
+
+.banner > a > img {
+    animation: wave-flag 1.5s linear infinite alternate;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .banner:hover img {
+    .banner:hover a img {
         transition: transform 0.1875s cubic-bezier(0.375, 0, 0.675, 1);
         transform-origin: top left;
     }
