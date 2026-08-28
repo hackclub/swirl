@@ -15,11 +15,13 @@
         >
       </li>
       {%- endfor %}
+      {% if site.is_individual_submissions_open %}
       <li class="navbar__submit-item">
         <a href="{{ site.data.nav.submit.url }}" class="navbar__btn"
           >{{ site.data.nav.submit.title }}</a
         >
       </li>
+      {% endif %}
     </ul>
   </div>
 </nav>

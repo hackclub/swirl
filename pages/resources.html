@@ -171,9 +171,26 @@ title_width: 19rem
 </div>
 
 <br /><br /><br />
-<center>
+<div
+  style="
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  {% if site.is_individual_submissions_open %}
   <a target="_blank" href="https://forms.hackclub.com/swirl" class="btn-link">
-    <button>Get your ice cream</button>
+    <button>Get your ice cream (individuals)</button>
   </a>
-</center>
+  {% endif %}
+  <a
+    target="_blank"
+    href="https://clubs.hackclub.com/workshops"
+    class="btn-link"
+  >
+    <button>Start a Swirl Workshop!</button>
+  </a>
+</div>
 <br /><br /><br />

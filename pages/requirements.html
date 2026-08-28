@@ -4,6 +4,7 @@ title: Swirl — Requirements
 heading: Requirements
 html_attrs: 'style="scroll-behavior: smooth"'
 ---
+
 <h2>What do I make?</h2>
 <br />
 <h3 style="padding-left: 2em">
@@ -28,7 +29,9 @@ html_attrs: 'style="scroll-behavior: smooth"'
     </div>
 
     <div class="item">
-      <div class="req-b" style="margin-bottom: 10px">Have 3 HTML pages with content</div>
+      <div class="req-b" style="margin-bottom: 10px">
+        Have 3 HTML pages with content
+      </div>
       <div class="img-b">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1280px-HTML5_logo_and_wordmark.svg.png?_=20170517184425"
@@ -81,7 +84,10 @@ html_attrs: 'style="scroll-behavior: smooth"'
     <div class="item centered">
       <div class="req-h">Have at least one scoop...</div>
       <div class="img-h">
-        <img src="{{ '/assets/svg/swirl-2.svg' | relative_url }}" alt="Sprinkles" />
+        <img
+          src="{{ '/assets/svg/swirl-2.svg' | relative_url }}"
+          alt="Sprinkles"
+        />
       </div>
       <a href="#scoops">what's a scoop?</a>
     </div>
@@ -185,10 +191,27 @@ html_attrs: 'style="scroll-behavior: smooth"'
 
 <!-- Sprinkles to go here :) -->
 
-<br /><br /><br />
-<center>
-  <a target="_blank" href="https://forms.hackclub.com/swirl"
-    ><button>Get your ice cream</button></a
+<br /><br />
+<div
+  style="
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  {% if site.is_individual_submissions_open %}
+  <a target="_blank" href="https://forms.hackclub.com/swirl" class="btn-link">
+    <button>Get your ice cream (individuals)</button>
+  </a>
+  {% endif %}
+  <a
+    target="_blank"
+    href="https://clubs.hackclub.com/workshops"
+    class="btn-link"
   >
-</center>
-<br /><br /><br />
+    <button>Start a Swirl Workshop!</button>
+  </a>
+</div>
+<br /><br />

@@ -1,10 +1,12 @@
 title: Swirl
 description: Ship a website, get ice cream!
 url: https://swirl.hackclub.com
-baseurl: ""
+baseurl: ''
 
 # Build settings
 encoding: UTF-8
+
+is_individual_submissions_open: false
 
 # Files/dirs that should not be copied into the built site
 exclude:

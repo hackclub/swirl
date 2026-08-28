@@ -21,10 +21,17 @@ title: Swirl
     Build a Website<br />
     Get Free Ice Cream!
   </h1>
+  {% if site.is_individual_submissions_open %}
+  <p>
+    Open for Individuals & Clubs! Start a club at
+    <a href="https://apply.hackclub.com" target="_blank">apply.hackclub.com</a>.
+  </p>
+  {% else %}
   <p>
     Open for Clubs Only! Start a club at
     <a href="https://apply.hackclub.com" target="_blank">apply.hackclub.com</a>.
   </p>
+  {% endif %}
   <br />
   <p style="font-size: 167%">
     Are you a club leader? Check out the
@@ -55,17 +62,17 @@ title: Swirl
     >
       <button>Requirements</button>
     </a>
-
+    {% if site.is_individual_submissions_open %}
     <a target="_blank" href="https://forms.hackclub.com/swirl" class="btn-link">
-      <button>Get your ice cream!</button>
+      <button>Get your ice cream (individuals)</button>
     </a>
-
+    {% endif %}
     <a
       target="_blank"
-      href="https://forms.hackclub.com/swirl-workshop"
+      href="https://clubs.hackclub.com/workshops"
       class="btn-link"
     >
-      <button>Run a Club Meeting</button>
+      <button>Run a Club Meeting (Clubs Platform)</button>
     </a>
   </div>
   <br />
