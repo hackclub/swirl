@@ -3,6 +3,7 @@ layout: default
 ---
 <div class="subpage__logo">
   <h1 id="circle_sub">
+    <canvas class="sprinkles" data-bias="bottom" aria-hidden="true"></canvas>
     <br />
     <img
       id="swirlText"
@@ -19,3 +20,5 @@ layout: default
 <br />
 
 {{ content }}
+
+<script src="{{ '/js/sprinkles.js' | relative_url }}"></script>

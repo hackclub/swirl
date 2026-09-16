@@ -27,19 +27,30 @@
     --strawberry-hover: #ffd6e3;
     --vanilla: #fff8f0;
     --chocolate-shadow: #c4845a;
+
+    /* ---- Ice cream cone redesign (homepage) ---- */
+    --cone: #e9b978;          /* golden waffle tan */
+    --cone-deep: #b5793d;     /* darker waffle / crosshatch lines */
+    --cone-tip: #a26a34;
+    --cocoa: #4a3318;         /* deep cocoa text */
+    --cream: #fff6e3;         /* vanilla content cards */
+    --backdrop: #fff3df;      /* pale parlour wall behind the cone */
+    --swirl: #b875ff;         /* the iconic purple soft-serve */
+    --swirl-light: #e3c8ff;
+    --swirl-deep: #9b4deb;
+    --cherry: #ff5c7a;        /* cherry on top */
+    --cherry-deep: #e23e5e;
 }
 
 /* ============================================================
    Base Styles
    ============================================================ */
+/* Every page is the cone: a flat waffle grid is the primary background. */
 body {
-    background: #fffacc;
-    background: radial-gradient(
-        circle,
-        rgba(255, 250, 204, 1) 0%,
-        rgba(253, 247, 157, 1) 30%,
-        rgba(253, 224, 157, 1) 100%
-    );
+    background-color: var(--cone);
+    background-image:
+        repeating-linear-gradient(48deg, transparent 0 30px, rgba(74, 30, 8, 0.11) 30px 32px),
+        repeating-linear-gradient(-48deg, transparent 0 30px, rgba(74, 30, 8, 0.11) 30px 32px);
 }
 
 * {
@@ -66,10 +77,21 @@ a, button {
     cursor: pointer;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Winky Sans', 'Poppins', sans-serif;
+    color: var(--cocoa);
+}
+
 h1 { font-size: 3.25rem; }
 h2 { font-size: 2.5rem; padding-left: 1rem; }
 h3 { font-size: 1.75rem; }
 p  { font-size: 20px; }
+
+/* Links read in the brand purple everywhere; coloured contexts (navbar,
+   footer, buttons) override via higher specificity. */
+a {
+    color: var(--swirl-deep);
+}
 
 a:hover {
     color: black;
@@ -127,6 +149,10 @@ html, body {
     padding: 0;
     margin: 0;
     background-color: var(--navbar-bg);
+    /* Top-lit gradient that continues the homepage dome's shading: lightest at
+       the top, settling into the dome's seam colour (--swirl) at the bottom edge
+       so the navbar and the dome below read as one continuous purple form. */
+    background-image: linear-gradient(to bottom, #c79bff 0%, var(--navbar-bg) 100%);
     height: 5em;
     display: flex;
     justify-content: center;
@@ -141,7 +167,7 @@ html, body {
 }
 
 .navbar__container {
-    background-color: var(--navbar-bg);
+    background-color: transparent;
     display: flex;
     justify-content: flex-end;
     height: 5em;
@@ -153,7 +179,7 @@ html, body {
 
 .navbar__menu {
     padding: 0;
-    background-color: var(--navbar-bg);
+    background-color: transparent;
     display: flex;
     align-items: center;
     list-style: none;
@@ -162,13 +188,13 @@ html, body {
 
 .navbar__item {
     padding: 0;
-    background-color: var(--navbar-bg);
+    background-color: transparent;
     height: 5em;
     margin: 0;
 }
 
 .navbar__links {
-    background-color: var(--navbar-bg);
+    background-color: transparent;
     color: white;
     display: flex;
     align-items: center;
@@ -188,25 +214,64 @@ html, body {
     align-items: center;
     padding: 0 0.5rem;
     margin: 0;
-    background-color: var(--navbar-bg);
+    background-color: transparent;
 }
 
 .navbar__btn {
-    background-color: lightskyblue;
-    border-radius: 1em;
+    background-color: var(--cherry);
+    border: 2px solid var(--cherry-deep);
+    border-radius: 999px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-decoration: none;
-    padding: 0.4em 1.5rem;
+    padding: 0.35em 1.4rem;
 }
 
 .navbar__btn:hover {
-    color: black;
-    background-color: white;
-    transition: background-color 0.5s ease-in, color 0.5s ease-in;
+    color: white;
+    background-color: #ff738c;
+    transition: background-color 0.3s ease-in;
 }
+
+/* Hamburger toggle — hidden on desktop, shown on mobile */
+.navbar__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.navbar__toggle span {
+    display: block;
+    width: 1.6rem;
+    height: 3px;
+    margin: 0 auto;
+    border-radius: 3px;
+    background: #fff;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.navbar__toggle:hover,
+.navbar__toggle:active {
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+.navbar__toggle.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.navbar__toggle.is-open span:nth-child(2) { opacity: 0; }
+.navbar__toggle.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* Hack Club flag banner (code from Hack Club brand website) */
 .banner {
@@ -238,20 +303,6 @@ html, body {
 @keyframes wave-flag {
     from { transform: rotate(0deg); }
     to   { transform: rotate(-5deg); }
-}
-
-/* ============================================================
-   Homepage Hero
-   ============================================================ */
-#circle {
-    height: 38rem;
-    width: 55rem;
-    background-color: var(--navbar-bg);
-    border-radius: 50%;
-    position: sticky;
-    margin-top: -21rem;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* ============================================================
@@ -350,22 +401,38 @@ div.rotate:hover {
    Buttons — match navbar pill style
    ============================================================ */
 button {
-    font-size: 1.25rem;
-    background-color: lightskyblue;
-    border: 0;
-    border-radius: 1em;
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    background: var(--cherry);
+    color: #fff;
+    border: 2px solid var(--cherry-deep);
+    border-radius: 999px;
     margin-top: 20px;
-    padding: 0.4em 1.5rem;
+    padding: 0.7em 1.4em;
     cursor: pointer;
-    font-family: 'Preahvihear', sans-serif;
+    font-family: 'Winky Sans', 'Poppins', sans-serif;
     font-weight: 700;
+    box-shadow: 0 0.35rem 0 var(--cherry-deep);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
 button:hover {
-    color: black;
-    background-color: white;
-    transition: background-color 0.5s ease-in, color 0.5s ease-in;
+    color: #fff;
+    background: #ff738c;
+    transform: translateY(-2px);
+    box-shadow: 0 0.55rem 0 var(--cherry-deep);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 0.1rem 0 var(--cherry-deep);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--cherry-deep);
+    outline-offset: 3px;
 }
 
 button a {
@@ -379,11 +446,14 @@ button a {
 div.main-content {
     margin-left: 2.5em;
     margin-right: 2.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background: var(--background);
+    padding: 1.5em;
+    color: var(--cocoa);
+    background-color: #fbe6c4;
+    background-image: radial-gradient(rgba(120, 72, 28, 0.14) 2px, transparent 2.5px);
+    background-size: 22px 22px;
     border-radius: 24px;
-    border: 2px solid rgba(184, 117, 255, 0.15);
+    border: 2px solid rgba(120, 75, 30, 0.3);
+    box-shadow: 0 0.6rem 0 rgba(74, 30, 8, 0.16), 0 1rem 1.6rem rgba(74, 30, 8, 0.12);
 }
 
 div.inspiration {
@@ -404,13 +474,16 @@ div.list_indent {
    ============================================================ */
 #gallery {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    /* Auto-fit cards to the available width instead of forcing a fixed count.
+       min(100%, 13rem) lets a single card fill the row on very narrow screens
+       while keeping ~13rem as the target card size everywhere else. */
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
     gap: 1rem;
     padding: 1rem;
 }
 
 #swirl-ships {
-    color: var(--accent-warm);
+    color: var(--swirl-deep);
 }
 
 .gallery-pagination {
@@ -440,27 +513,21 @@ div.list_indent {
 }
 
 .gallery-pagination button:disabled:hover {
-    background-color: lightskyblue;
-    color: white;
-}
-
-@media (max-width: 1100px) {
-    #gallery { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 800px) {
-    #gallery { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 500px) {
-    #gallery { grid-template-columns: 1fr; }
+    background: var(--cherry);
+    color: #fff;
+    transform: none;
+    box-shadow: 0 0.35rem 0 var(--cherry-deep);
 }
 
 .gallery-item {
-    background: var(--dark-box);
+    color: var(--cocoa);
+    background-color: #f3d3a0;
+    background-image: radial-gradient(rgba(120, 72, 28, 0.18) 2px, transparent 2.5px);
+    background-size: 22px 22px;
+    border: 2px solid rgba(120, 75, 30, 0.35);
     border-radius: 16px;
     padding: 0.6rem;
-    box-shadow: 0 4px 0 var(--chocolate-shadow);
+    box-shadow: 0 0.5rem 0 rgba(74, 30, 8, 0.18);
     text-align: center;
     transition: transform 0.5s ease, background-color 0.5s ease;
     min-width: 0;
@@ -469,7 +536,7 @@ div.list_indent {
 
 .gallery-item:hover {
     transform: scale(1.04);
-    background-color: var(--dark-box-hover);
+    background-color: #eec78c;
 }
 
 .gallery-item a:hover {
@@ -582,10 +649,20 @@ footer a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--dark-box);
+    color: var(--cocoa);
+    background-color: #f3d3a0;
+    background-image: radial-gradient(rgba(120, 72, 28, 0.18) 2px, transparent 2.5px);
+    background-size: 22px 22px;
+    border: 2px solid rgba(120, 75, 30, 0.35);
     border-radius: 20px;
     padding: 1rem;
     font-size: 1.5rem;
+    box-shadow: 0 0.6rem 0 rgba(74, 30, 8, 0.18), 0 1rem 1.6rem rgba(74, 30, 8, 0.14);
+}
+
+.item a {
+    color: var(--swirl-deep);
+    font-weight: 700;
 }
 
 .item img:not(.inline-icon) {
@@ -599,55 +676,80 @@ footer a {
    Responsive — Mobile (max-width: 700px)
    ============================================================ */
 @media (max-width: 700px) {
+    /* ---- Navbar: collapse links into a tappable dropdown ---- */
     .navbar {
-        height: 3em;
+        height: 3.5em;
         font-size: 1em;
     }
 
-    .navbar__links {
-        display: none;
-        flex-direction: column;
-        background-color: var(--navbar-bg);
-        width: 100%;
-        text-align: center;
-        padding: 1em 0;
+    .navbar__container {
+        padding: 0 1rem;
+        align-items: center;
     }
 
-    .navbar__links.active {
+    .navbar__toggle {
         display: flex;
     }
 
-    .navbar__links .navbar__btn {
-        padding: 0 0.1rem;
+    .navbar__menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--navbar-bg);
+        display: none;
+        padding: 0.4rem 0 0.9rem;
+        box-shadow: 0 0.6rem 1rem rgba(74, 30, 8, 0.2);
+    }
+
+    .navbar__menu.is-open {
+        display: flex;
+    }
+
+    .navbar__item,
+    .navbar__links {
+        height: auto;
+        width: 100%;
+    }
+
+    .navbar__links {
+        padding: 0.85rem;
+        justify-content: center;
+    }
+
+    .navbar__submit-item {
+        justify-content: center;
+        padding: 0.6rem 1rem 0.2rem;
     }
 
     .banner img {
-        width: 1em;
+        width: 2.4em;
     }
 
-    #circle {
-        height: 18rem;
-        width: 25rem;
-        margin-top: -16rem;
+    /* ---- Type & spacing: reclaim horizontal room ---- */
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.9rem; padding-left: 0; }
+    h3 { font-size: 1.4rem; }
+
+    h1, h3, h4, h5, h6, p, li {
+        margin-left: 0.9em;
+        margin-right: 0.9em;
     }
 
-    #swirl-logo {
-        width: 10rem;
-        height: 10rem;
-        margin-top: 1rem;
-        margin-bottom: -4rem;
+    /* ---- Boxes: trim margins so they don't crowd the edges ---- */
+    div.main-content {
+        margin-left: 0.8em;
+        margin-right: 0.8em;
+        padding: 1.2em 1em;
     }
 
-    div.rotate {
-        margin-left: 3rem;
-        font-size: 1rem;
-        padding-left: 2rem;
+    .grid {
+        margin: 1.5rem 0.3rem;
+        gap: 1.2rem;
     }
 
-    h1 { font-size: 3rem; }
-
-    #main-text { font-size: 2rem; }
-
+    /* ---- Leader Zone ---- */
     .leader-zone-images {
         flex-direction: column;
         align-items: center;
@@ -659,5 +761,417 @@ footer a {
 
     .leader-zone-list {
         margin: 0 1em;
+    }
+
+    /* ---- Requirements grid stacks to a single column ---- */
+    .req-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+        padding: 1rem 0.5rem;
+    }
+
+    .req-grid .space {
+        display: none;
+    }
+}
+
+/* ============================================================
+   Homepage — Ice Cream Cone redesign
+   Scoped to body.home so subpages are untouched.
+   Display face: Winky Sans (rounded, playful). Body: Poppins.
+   ============================================================ */
+/* ---- Hero: the purple ice cream dome (sprinkles live on it) ---- */
+.hero {
+    position: relative;
+    z-index: 2;
+}
+
+/* The classic purple dome, restored. A wide circle pulled up under the
+   navbar so only its rounded scoop shows — the ice cream sitting in the cone.
+   The wordmark and tag sit in its visible lower portion, over the sprinkles. */
+#circle {
+    position: relative;
+    height: 40rem;
+    width: min(96vw, 60rem);
+    margin: -19rem auto 0;
+    border-radius: 50%;
+    /* Flat purple — no darkening toward the bottom. Matches the navbar's bottom
+       colour so the navbar and dome stay seamless. */
+    background: var(--swirl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 2.5rem;
+}
+
+/* sprinkles canvas, clipped to the dome */
+.sprinkles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#circle #swirl-logo,
+#circle .tagline {
+    position: relative;
+    z-index: 2;
+}
+
+/* ---- The cone: waffle-textured body ---- */
+/* The cone is now the whole page background; this just lays out the content
+   over it (no own fill, no taper, no gradient). */
+.cone {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 2.5rem clamp(1.25rem, 7vw, 7rem) 6rem;
+    color: var(--cocoa);
+}
+
+/* ---- Type & shared homepage elements ---- */
+.home h2 {
+    font-family: 'Winky Sans', 'Poppins', sans-serif;
+}
+
+.home #swirl-logo {
+    display: block;
+    width: min(80vw, 25rem);
+    height: auto;
+    margin: 0 auto 0.4rem;
+    filter: drop-shadow(0 0.35rem 0.5rem rgba(58, 16, 104, 0.55));
+}
+
+.home .tagline {
+    display: inline-block;
+    transform: rotate(-4deg);
+    font-family: 'Winky Sans', 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--swirl-deep);
+    background: var(--cream);
+    padding: 0.2em 0.85em;
+    border-radius: 999px;
+    box-shadow: 0 0.3rem 0 rgba(74, 30, 8, 0.18);
+    margin: 0.4rem 0 1.4rem;
+}
+
+.home #main-text {
+    font-family: 'Winky Sans', 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.03;
+    letter-spacing: -0.01em;
+    color: var(--cocoa);
+    margin: 0.2rem auto 0.4rem;
+}
+
+.home .hero__sub {
+    font-size: 1.25rem;
+    color: var(--cocoa);
+    margin: 0;
+}
+
+.home .hero__leader {
+    margin-top: 1.6rem;
+    font-size: 1.1rem;
+    color: var(--cocoa);
+}
+
+.home .link-accent {
+    color: var(--swirl-deep);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(155, 77, 235, 0.45);
+    text-underline-offset: 3px;
+}
+
+/* ---- Candy pill buttons ---- */
+.home .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.6rem;
+}
+
+.home .hero__actions--center {
+    justify-content: center;
+}
+
+.home .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Winky Sans', 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    padding: 0.7em 1.4em;
+    border-radius: 999px;
+    background: var(--cream);
+    color: var(--swirl-deep);
+    border: 2px solid rgba(74, 30, 8, 0.16);
+    box-shadow: 0 0.35rem 0 rgba(74, 30, 8, 0.22);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.home .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.55rem 0 rgba(74, 30, 8, 0.22);
+    background: #fffdf6;
+    color: var(--swirl-deep);
+}
+
+.home .btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 0.1rem 0 rgba(74, 30, 8, 0.22);
+}
+
+.home .btn:focus-visible {
+    outline: 3px solid var(--swirl-deep);
+    outline-offset: 3px;
+}
+
+.home .btn--primary {
+    background: var(--cherry);
+    color: #fff;
+    border-color: var(--cherry-deep);
+    box-shadow: 0 0.35rem 0 var(--cherry-deep);
+}
+
+.home .btn--primary:hover {
+    background: #ff738c;
+    color: #fff;
+    box-shadow: 0 0.55rem 0 var(--cherry-deep);
+}
+
+.home .btn--primary:active {
+    box-shadow: 0 0.1rem 0 var(--cherry-deep);
+}
+
+/* ---- "cousins" line (Boba Drops / web dev) ---- */
+.home .cousins {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    text-align: center;
+    margin: 3rem auto 0.5rem;
+    font-size: 1.05rem;
+}
+
+.home .cousins__boba {
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.home .cousins a {
+    color: var(--swirl-deep);
+    font-weight: 700;
+}
+
+/* ---- Flavor cards (Who / What / How) ---- */
+.home .scoop-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+    max-width: 62rem;
+    margin: 2.5rem auto 3.5rem;
+}
+
+/* Cream polka-dot tile, shared by the Who/What/How and Inspiration boxes.
+   Dots contrast with the diagonal waffle background so the cards stand out. */
+.home .flavor,
+.home .item {
+    border: 2px solid rgba(120, 75, 30, 0.35);
+    background-color: #f3d3a0;
+    background-image: radial-gradient(rgba(120, 72, 28, 0.18) 2px, transparent 2.5px);
+    background-size: 22px 22px;
+    box-shadow: 0 0.6rem 0 rgba(74, 30, 8, 0.18), 0 1rem 1.6rem rgba(74, 30, 8, 0.14);
+}
+
+.home .flavor {
+    border-radius: 1.4rem;
+    padding: 1.6rem 1.6rem 1.8rem;
+}
+
+.home .flavor__eyebrow {
+    display: inline-block;
+    font-family: 'Winky Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--swirl);
+    padding: 0.28em 0.85em;
+    border-radius: 999px;
+    margin-bottom: 0.8rem;
+}
+
+.home .flavor:nth-child(2) .flavor__eyebrow { background: var(--cherry); }
+.home .flavor:nth-child(3) .flavor__eyebrow { background: #2fb98a; }
+
+.home .flavor h2 {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0 0 0.5rem;
+    color: var(--cocoa);
+}
+
+.home .flavor p {
+    font-size: 1.02rem;
+    line-height: 1.55;
+    margin: 0;
+    color: var(--cocoa);
+}
+
+/* ---- Inspiration ---- */
+.home .inspiration {
+    max-width: 64rem;
+    margin: 1rem auto 3rem;
+    font-size: inherit;
+}
+
+.home .inspiration__head h2 {
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
+}
+
+.home .inspiration__head p {
+    font-size: 1.15rem;
+    color: var(--cocoa);
+    margin-top: 0.3rem;
+}
+
+.home .grid {
+    margin: 2rem 0;
+}
+
+.home .item {
+    color: var(--cocoa);
+    border-radius: 1.2rem;
+    font-size: 1.1rem;
+    gap: 0.45rem;
+    padding: 1rem 1rem 1.25rem;
+}
+
+.home .item img:not(.inline-icon) {
+    border-radius: 0.8rem;
+    box-shadow: 0 0.3rem 0.8rem rgba(74, 30, 8, 0.2);
+    margin-bottom: 0.6rem;
+}
+
+.home .item a {
+    color: var(--swirl-deep);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.home .item a:hover {
+    color: var(--cherry-deep);
+}
+
+.home .item__repo {
+    font-size: 0.95rem;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.home .inspiration__more {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.home #swirl-ships {
+    color: var(--swirl-deep);
+    font-weight: 700;
+}
+
+.home .inspiration__more a {
+    color: var(--swirl-deep);
+    font-weight: 700;
+}
+
+/* ---- Help / closing ---- */
+.home .help {
+    max-width: 50rem;
+    margin: 1rem auto 0;
+}
+
+.home .help h2 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.home .help p {
+    font-size: 1.12rem;
+    color: var(--cocoa);
+    margin: 0.6rem auto 0;
+}
+
+.home .help p a {
+    color: var(--swirl-deep);
+    font-weight: 700;
+}
+
+.home .help__send {
+    margin-top: 2.2rem;
+}
+
+/* ---- One orchestrated entrance (respects reduced motion) ---- */
+@keyframes scoop-in {
+    from { opacity: 0; transform: translateY(-2.2rem) scale(0.92); }
+    to   { opacity: 1; transform: none; }
+}
+
+@keyframes soft-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.home #circle { animation: scoop-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.home .hero__pitch { animation: soft-fade 0.8s ease 0.35s both; }
+
+@media (prefers-reduced-motion: reduce) {
+    .home #circle,
+    .home .hero__pitch {
+        animation: none;
+    }
+}
+
+/* ---- Homepage responsive ---- */
+@media (max-width: 700px) {
+    .home #circle {
+        height: 25rem;
+        width: min(94vw, 30rem);
+        margin-top: -9rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .home #swirl-logo {
+        width: min(68vw, 16rem);
+    }
+
+    .home .tagline {
+        font-size: 1.1rem;
+        margin: 0.3rem 0 1rem;
+    }
+
+    .home .cone { padding: 2rem 1rem 4.5rem; }
+    .home #main-text { font-size: 1.95rem; }
+    .home .hero__sub { font-size: 1.1rem; }
+
+    .home .hero__actions .btn {
+        flex: 1 1 100%;
+        max-width: 22rem;
+    }
+
+    .home .scoop-cards {
+        gap: 1.1rem;
+        margin: 2rem auto 2.5rem;
     }
 }

@@ -120,6 +120,7 @@ let currentPage = 1;
 function renderGalleryPage(page) {
     currentPage = page;
     const gallery = document.getElementById('gallery');
+    if (!gallery) return; // homepage shows the count only, no gallery grid
     gallery.innerHTML = '';
 
     const start = (page - 1) * PAGE_SIZE;
@@ -167,11 +168,14 @@ fetch('/data/data.json')
     .then((response) => response.json())
     .then((data) => {
         allRecords = Object.values(data);
-        document.getElementById('swirl-ships').textContent = allRecords.length;
+        const shipsEl = document.getElementById('swirl-ships');
+        if (shipsEl) shipsEl.textContent = allRecords.length;
         renderGalleryPage(1);
     })
     .catch((err) => {
-        document.getElementById('gallery').innerHTML =
-            '<p>Failed to load gallery.</p>';
+        const shipsEl = document.getElementById('swirl-ships');
+        if (shipsEl) shipsEl.textContent = 'many';
+        const gallery = document.getElementById('gallery');
+        if (gallery) gallery.innerHTML = '<p>Failed to load gallery.</p>';
         console.error(err);
     });

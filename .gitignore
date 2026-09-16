@@ -3,6 +3,9 @@
 .DS_Store
 .env
 
+# Claude Code
+CLAUDE.md
+
 # Jekyll
 .bundle/
 _site/

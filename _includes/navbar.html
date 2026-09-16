@@ -3,7 +3,15 @@
     <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club" />
   </a>
   <div class="navbar__container">
-    <ul class="navbar__menu">
+    <button
+      class="navbar__toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="navbar-menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar__menu" id="navbar-menu">
       {%- for link in site.data.nav.links %}
       <li class="navbar__item">
         <a
@@ -22,3 +30,23 @@
     </ul>
   </div>
 </nav>
+
+<script>
+  (function () {
+    var toggle = document.querySelector('.navbar__toggle');
+    var menu = document.getElementById('navbar-menu');
+    if (!toggle || !menu) return;
+    toggle.addEventListener('click', function () {
+      var open = menu.classList.toggle('is-open');
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) {
+        menu.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>
